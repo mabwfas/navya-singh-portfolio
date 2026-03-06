@@ -101,7 +101,7 @@ export default function Hero() {
           className="inline-flex items-center gap-2.5 rounded-full glass-raised px-5 py-2.5 mb-10"
         >
           <Smartphone size={13} className="text-brand" />
-          <span className="text-[11px] text-zinc-400 font-mono tracking-[0.2em] uppercase">
+          <span className="text-xs sm:text-[11px] text-zinc-400 font-mono tracking-[0.2em] uppercase">
             Mobile App Architect
           </span>
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
@@ -168,7 +168,7 @@ export default function Hero() {
                 <div className="text-2xl sm:text-3xl font-bold text-white mb-1 font-display">
                   {stat.value}
                 </div>
-                <div className="text-[10px] text-zinc-500 uppercase tracking-[0.15em] font-mono">
+                <div className="text-[11px] sm:text-[10px] text-zinc-500 uppercase tracking-[0.15em] font-mono">
                   {stat.label}
                 </div>
               </div>
@@ -208,7 +208,7 @@ export default function Hero() {
         transition={{ delay: 1.8 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-        <span className="text-[9px] font-mono text-zinc-600 tracking-widest uppercase">Scroll</span>
+        <span className="text-[11px] sm:text-[9px] font-mono text-zinc-600 tracking-widest uppercase">Scroll</span>
         <motion.div animate={{ y: [0, 6, 0] }} transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}>
           <ArrowDown size={16} className="text-zinc-600" />
         </motion.div>

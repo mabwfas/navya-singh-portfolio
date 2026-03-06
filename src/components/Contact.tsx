@@ -95,8 +95,8 @@ export default function Contact() {
                         <Icon size={16} style={{ color }} />
                       </div>
                       <div>
-                        <p className="text-[10px] text-zinc-500 uppercase tracking-[0.15em] font-mono">{label}</p>
-                        <p className="text-sm text-zinc-300 group-hover:text-white transition-colors">{value}</p>
+                        <p className="text-[11px] sm:text-[10px] text-zinc-500 uppercase tracking-[0.15em] font-mono">{label}</p>
+                        <p className="text-[13px] sm:text-sm text-zinc-300 group-hover:text-white transition-colors">{value}</p>
                       </div>
                     </Wrapper>
                   );
@@ -124,8 +124,8 @@ export default function Contact() {
                 <MessageCircle size={16} style={{ color: '#25D366' }} />
               </div>
               <div>
-                <p className="text-[10px] text-zinc-500 uppercase tracking-[0.15em] font-mono">WhatsApp</p>
-                <p className="text-sm text-zinc-300 group-hover:text-white transition-colors">Message me directly</p>
+                <p className="text-[11px] sm:text-[10px] text-zinc-500 uppercase tracking-[0.15em] font-mono">WhatsApp</p>
+                <p className="text-[13px] sm:text-sm text-zinc-300 group-hover:text-white transition-colors">Message me directly</p>
               </div>
             </motion.a>
           </motion.div>
@@ -143,7 +143,7 @@ export default function Contact() {
                   { label: 'Email', type: 'email', placeholder: 'your@email.com' },
                 ].map(({ label, type, placeholder }) => (
                   <div key={label}>
-                    <label className="text-[10px] text-zinc-500 uppercase tracking-[0.2em] font-mono mb-2 block">
+                    <label className="text-[11px] sm:text-[10px] text-zinc-500 uppercase tracking-[0.2em] font-mono mb-2 block">
                       {label}
                     </label>
                     <input
@@ -154,7 +154,7 @@ export default function Contact() {
                   </div>
                 ))}
                 <div>
-                  <label className="text-[10px] text-zinc-500 uppercase tracking-[0.2em] font-mono mb-2 block">
+                  <label className="text-[11px] sm:text-[10px] text-zinc-500 uppercase tracking-[0.2em] font-mono mb-2 block">
                     Message
                   </label>
                   <textarea

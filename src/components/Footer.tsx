@@ -10,13 +10,13 @@ export default function Footer() {
           <div className="flex items-center gap-3">
             <span className="text-lg font-bold text-shimmer">NS</span>
             <div className="w-[1px] h-4 bg-white/[0.06]" />
-            <p className="text-[11px] text-zinc-600 font-mono">
+            <p className="text-xs sm:text-[11px] text-zinc-600 font-mono">
               &copy; {new Date().getFullYear()} Navya Singh
             </p>
           </div>
 
           <div className="flex items-center gap-4">
-            <div className="flex items-center gap-1.5 text-[11px] text-zinc-600">
+            <div className="flex items-center gap-1.5 text-xs sm:text-[11px] text-zinc-600">
               <span>Designed with</span>
               <motion.span
                 animate={{ scale: [1, 1.2, 1] }}
@@ -28,7 +28,7 @@ export default function Footer() {
               <span>in Lucknow</span>
             </div>
             <div className="w-[1px] h-3 bg-white/[0.04]" />
-            <span className="text-[10px] text-zinc-700 font-mono">React + Tailwind</span>
+            <span className="text-[11px] sm:text-[10px] text-zinc-700 font-mono">React + Tailwind</span>
           </div>
         </div>
       </div>

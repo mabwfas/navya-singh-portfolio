@@ -86,8 +86,8 @@ function FloatingWidget({
           <Icon size={13} style={{ color }} />
         </div>
         <div>
-          <div className="text-[10px] text-zinc-500 font-mono uppercase tracking-wider">{label}</div>
-          <div className="text-xs font-bold text-white">{value}</div>
+          <div className="text-[11px] sm:text-[10px] text-zinc-500 font-mono uppercase tracking-wider">{label}</div>
+          <div className="text-sm sm:text-xs font-bold text-white">{value}</div>
         </div>
       </div>
     </motion.div>
@@ -120,8 +120,8 @@ function MiniSparkline({ color, delay }: { color: string; delay: number }) {
         }}
       >
         <div className="flex items-center justify-between mb-1.5">
-          <span className="text-[9px] font-mono text-zinc-500 uppercase tracking-wider">Growth</span>
-          <span className="text-[10px] font-bold" style={{ color }}>+127%</span>
+          <span className="text-[11px] sm:text-[9px] font-mono text-zinc-500 uppercase tracking-wider">Growth</span>
+          <span className="text-[11px] sm:text-[10px] font-bold" style={{ color }}>+127%</span>
         </div>
         <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`} fill="none">
           <defs>
@@ -298,7 +298,7 @@ function FeaturedProjectCard({
             className="mb-5"
           >
             <span
-              className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-[10px] font-mono font-semibold uppercase tracking-wider"
+              className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-[11px] sm:text-[10px] font-mono font-semibold uppercase tracking-wider"
               style={{
                 color: project.color,
                 background: `${project.color}08`,
@@ -322,15 +322,15 @@ function FeaturedProjectCard({
           {/* Category */}
           <div className="flex items-center gap-3 mb-3">
             <div className="w-10 h-[1px]" style={{ background: `linear-gradient(90deg, ${project.color}, transparent)` }} />
-            <span className="text-[10px] uppercase tracking-[0.25em] text-zinc-500 font-mono">{project.tech[0]}</span>
+            <span className="text-[11px] sm:text-[10px] uppercase tracking-[0.25em] text-zinc-500 font-mono">{project.tech[0]}</span>
           </div>
 
           {/* Title */}
           <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2 tracking-tight group-hover:text-brand-light transition-colors duration-300">
             {project.title}
           </h3>
-          <p className="text-sm text-zinc-500 mb-4 font-medium">{project.subtitle}</p>
-          <p className="text-sm text-zinc-400 leading-relaxed mb-6 max-w-md">{project.description}</p>
+          <p className="text-[13px] sm:text-sm text-zinc-500 mb-4 font-medium">{project.subtitle}</p>
+          <p className="text-[13px] sm:text-sm text-zinc-400 leading-relaxed mb-6 max-w-md">{project.description}</p>
 
           {/* Tech tags — staggered appearance */}
           <div className="flex flex-wrap gap-1.5 mb-6">
@@ -340,7 +340,7 @@ function FeaturedProjectCard({
                 initial={{ opacity: 0, y: 8 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.5 + ti * 0.06, duration: 0.4 }}
-                className="text-[10px] font-mono rounded-md px-2.5 py-1.5 transition-all duration-300"
+                className="text-[11px] sm:text-[10px] font-mono rounded-md px-2.5 py-1.5 transition-all duration-300"
                 style={{
                   background: isHovered ? `${project.color}10` : 'rgba(255,255,255,0.03)',
                   border: `1px solid ${isHovered ? `${project.color}25` : 'rgba(255,255,255,0.05)'}`,
@@ -374,7 +374,7 @@ function FeaturedProjectCard({
                 initial={{ opacity: 0, x: -10 }}
                 animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: 0.6 + fi * 0.08 }}
-                className="flex items-center gap-2 text-[11px] text-zinc-500 group-hover:text-zinc-400 transition-colors"
+                className="flex items-center gap-2 text-xs sm:text-[11px] text-zinc-500 group-hover:text-zinc-400 transition-colors"
               >
                 <feat.icon size={12} style={{ color: `${project.color}90` }} />
                 <span>{feat.label}</span>
@@ -396,7 +396,7 @@ function FeaturedProjectCard({
                   />
                 ))}
               </div>
-              <span className="text-[11px] text-zinc-600 font-mono">Team of 8</span>
+              <span className="text-xs sm:text-[11px] text-zinc-600 font-mono">Team of 8</span>
             </div>
 
             <motion.div
@@ -557,7 +557,7 @@ function ProjectCard({
           className="absolute top-4 left-4 z-10"
         >
           <span
-            className="inline-flex items-center gap-1.5 text-[10px] font-mono font-semibold rounded-full px-3 py-1.5 backdrop-blur-xl"
+            className="inline-flex items-center gap-1.5 text-[11px] sm:text-[10px] font-mono font-semibold rounded-full px-3 py-1.5 backdrop-blur-xl"
             style={{
               color: project.color,
               background: 'rgba(0,0,0,0.6)',
@@ -584,13 +584,13 @@ function ProjectCard({
         {/* Category line */}
         <div className="flex items-center gap-3 mb-3">
           <div className="w-8 h-[1px]" style={{ background: `linear-gradient(90deg, ${project.color}, transparent)` }} />
-          <span className="text-[10px] uppercase tracking-[0.2em] text-zinc-500 font-mono">{project.tech[0]}</span>
+          <span className="text-[11px] sm:text-[10px] uppercase tracking-[0.2em] text-zinc-500 font-mono">{project.tech[0]}</span>
         </div>
 
         <h3 className="text-lg font-bold text-white mb-1.5 group-hover:text-brand-light transition-colors duration-300">
           {project.title}
         </h3>
-        <p className="text-xs text-zinc-500 mb-3 font-medium">{project.subtitle}</p>
+        <p className="text-[13px] sm:text-xs text-zinc-500 mb-3 font-medium">{project.subtitle}</p>
         <p className="text-sm text-zinc-400 leading-relaxed mb-5 line-clamp-2">{project.description}</p>
 
         {/* Tech tags */}
@@ -598,7 +598,7 @@ function ProjectCard({
           {project.tech.map((t, ti) => (
             <span
               key={t}
-              className="text-[10px] font-mono rounded-md px-2.5 py-1 transition-all duration-300"
+              className="text-[11px] sm:text-[10px] font-mono rounded-md px-2.5 py-1 transition-all duration-300"
               style={{
                 background: isHovered ? `${project.color}12` : 'rgba(255,255,255,0.03)',
                 border: `1px solid ${isHovered ? `${project.color}25` : 'rgba(255,255,255,0.05)'}`,
@@ -613,7 +613,7 @@ function ProjectCard({
 
         {/* Action row */}
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2 text-[11px] text-zinc-600">
+          <div className="flex items-center gap-2 text-xs sm:text-[11px] text-zinc-600">
             <div className="flex -space-x-1">
               {[...Array(3)].map((_, i) => (
                 <div
@@ -711,7 +711,7 @@ export default function Projects() {
           className="mt-16 flex items-center justify-center gap-4"
         >
           <div className="w-24 h-[1px] bg-gradient-to-r from-transparent to-white/[0.06]" />
-          <span className="text-[10px] font-mono text-zinc-600 tracking-widest">AND MORE IN PROGRESS</span>
+          <span className="text-[11px] sm:text-[10px] font-mono text-zinc-600 tracking-widest">AND MORE IN PROGRESS</span>
           <div className="w-24 h-[1px] bg-gradient-to-l from-transparent to-white/[0.06]" />
         </motion.div>
       </div>

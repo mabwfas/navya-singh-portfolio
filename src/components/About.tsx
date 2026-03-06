@@ -73,7 +73,7 @@ export default function About() {
         <div className="grid lg:grid-cols-2 gap-12 mb-16">
           {/* Left — Bio + Testimonials */}
           <FadeIn delay={0.1}>
-            <p className="text-zinc-400 leading-[1.8] text-[15px] mb-8">{profile.bio}</p>
+            <p className="text-zinc-400 leading-[1.8] text-sm sm:text-[15px] mb-8">{profile.bio}</p>
 
             {/* Testimonials */}
             <div className="space-y-4">
@@ -81,14 +81,14 @@ export default function About() {
                 <InteractiveCard key={i} className="p-5">
                   <div className="relative z-10">
                     <Quote size={14} className="text-brand/60 mb-3" />
-                    <p className="text-sm text-zinc-300 italic leading-relaxed mb-3">
+                    <p className="text-[13px] sm:text-sm text-zinc-300 italic leading-relaxed mb-3">
                       "{t.quote}"
                     </p>
                     <div className="flex items-center gap-2">
                       <div className="w-6 h-[1px] bg-gradient-to-r from-brand/40 to-transparent" />
                       <div>
-                        <p className="text-[11px] text-zinc-300 font-mono">{t.author}</p>
-                        <p className="text-[10px] text-zinc-600 font-mono">{t.role}</p>
+                        <p className="text-xs sm:text-[11px] text-zinc-300 font-mono">{t.author}</p>
+                        <p className="text-[11px] sm:text-[10px] text-zinc-600 font-mono">{t.role}</p>
                       </div>
                     </div>
                   </div>
@@ -113,12 +113,12 @@ export default function About() {
                     <div className="relative z-10">
                       <div className="flex justify-between items-start mb-1.5">
                         <h4 className="text-sm font-semibold text-white pr-4">{edu.degree}</h4>
-                        <span className="text-[10px] text-zinc-500 font-mono shrink-0 bg-white/[0.03] rounded-md px-2 py-0.5">
+                        <span className="text-[11px] sm:text-[10px] text-zinc-500 font-mono shrink-0 bg-white/[0.03] rounded-md px-2 py-0.5">
                           {edu.year}
                         </span>
                       </div>
-                      <p className="text-sm text-brand-light mb-1">{edu.school}</p>
-                      <p className="text-[11px] text-zinc-500 leading-relaxed">{edu.details}</p>
+                      <p className="text-[13px] sm:text-sm text-brand-light mb-1">{edu.school}</p>
+                      <p className="text-xs sm:text-[11px] text-zinc-500 leading-relaxed">{edu.details}</p>
                     </div>
                   </InteractiveCard>
                 ))}
@@ -137,8 +137,8 @@ export default function About() {
                 {awards.map((award, i) => (
                   <InteractiveCard key={i} className="p-4">
                     <div className="relative z-10">
-                      <h4 className="text-xs font-semibold text-white mb-1.5">{award.title}</h4>
-                      <p className="text-[11px] text-zinc-500 leading-relaxed">{award.detail}</p>
+                      <h4 className="text-sm sm:text-xs font-semibold text-white mb-1.5">{award.title}</h4>
+                      <p className="text-xs sm:text-[11px] text-zinc-500 leading-relaxed">{award.detail}</p>
                     </div>
                   </InteractiveCard>
                 ))}
@@ -162,7 +162,7 @@ export default function About() {
                     viewport={{ once: true }}
                     transition={{ delay: 0.5 + i * 0.05 }}
                     whileHover={{ y: -2, borderColor: 'rgba(16, 185, 129, 0.3)' }}
-                    className="text-[11px] dark-card rounded-lg px-3 py-2 text-zinc-400 cursor-default"
+                    className="text-xs sm:text-[11px] dark-card rounded-lg px-3 py-2 text-zinc-400 cursor-default"
                   >
                     {cert}
                   </motion.span>

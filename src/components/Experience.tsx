@@ -104,7 +104,7 @@ function TimelineItem({ item, index }: { item: (typeof experience)[0]; index: nu
                   style={{ background: color }}
                 />
                 <span
-                  className="text-[10px] font-mono uppercase tracking-[0.15em]"
+                  className="text-[12px] sm:text-[10px] font-mono uppercase tracking-[0.15em]"
                   style={{ color }}
                 >
                   {item.type}
@@ -116,8 +116,8 @@ function TimelineItem({ item, index }: { item: (typeof experience)[0]; index: nu
               <p className="text-sm font-medium" style={{ color }}>{item.company}</p>
             </div>
             <div className="text-right shrink-0">
-              <p className="text-xs text-zinc-500 font-mono">{item.period}</p>
-              <p className="text-[11px] text-zinc-600">{item.location}</p>
+              <p className="text-sm sm:text-xs text-zinc-500 font-mono">{item.period}</p>
+              <p className="text-xs sm:text-[11px] text-zinc-600">{item.location}</p>
             </div>
           </div>
 
@@ -129,7 +129,7 @@ function TimelineItem({ item, index }: { item: (typeof experience)[0]; index: nu
                 initial={{ opacity: 0, x: -10 }}
                 animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: 0.3 + index * 0.1 + i * 0.08 }}
-                className="text-sm text-zinc-400 leading-relaxed flex gap-3 group/item"
+                className="text-[13px] sm:text-sm text-zinc-400 leading-relaxed flex gap-3 group/item"
               >
                 <span
                   className="mt-1.5 w-1 h-1 rounded-full shrink-0 group-hover/item:scale-150 transition-transform"

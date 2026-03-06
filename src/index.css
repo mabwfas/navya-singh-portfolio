@@ -338,6 +338,14 @@
     mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
     -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
   }
+
+  /* --- Mobile Font Size Overrides --- */
+  /* Bump tiny text sizes on small screens for readability */
+  @media (max-width: 639px) {
+    .section-heading {
+      font-size: 12px;
+    }
+  }
 }
 
 @layer utilities {
