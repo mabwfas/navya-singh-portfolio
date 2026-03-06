@@ -76,7 +76,7 @@ function TimelineItem({ item, index }: { item: (typeof experience)[0]; index: nu
 
       {/* Card */}
       <div
-        className="dark-card corner-squares rounded-xl overflow-hidden"
+        className="dark-card corner-squares rounded-xl overflow-hidden glass-glow"
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
@@ -162,16 +162,31 @@ export default function Experience() {
           className="mb-14"
         >
           <div className="flex items-center gap-4 mb-4">
-            <div className="w-12 h-[1px] bg-gradient-to-r from-brand to-transparent" />
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={inView ? { scaleX: 1 } : {}}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="w-12 h-[1px] bg-gradient-to-r from-brand to-transparent origin-left"
+            />
             <p className="section-heading mb-0">Career</p>
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4">
+          <motion.h2
+            initial={{ opacity: 0, y: 20, filter: 'blur(8px)' }}
+            animate={inView ? { opacity: 1, y: 0, filter: 'blur(0px)' } : {}}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="text-4xl sm:text-5xl font-bold tracking-tight mb-4"
+          >
             Where I've <span className="gradient-text">Built</span>
-          </h2>
-          <p className="text-zinc-500 max-w-lg leading-relaxed">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, filter: 'blur(6px)' }}
+            animate={inView ? { opacity: 1, filter: 'blur(0px)' } : {}}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-zinc-500 max-w-lg leading-relaxed"
+          >
             From Paytm's hypergrowth to Flipkart's next-gen architecture — a decade of
             shipping at India's most ambitious companies.
-          </p>
+          </motion.p>
         </motion.div>
 
         <div className="relative">

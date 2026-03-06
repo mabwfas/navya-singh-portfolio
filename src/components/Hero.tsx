@@ -1,5 +1,5 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { motion, useScroll, useTransform, useInView } from 'framer-motion';
+import { useRef, useEffect, useState } from 'react';
 import { MapPin, Smartphone, Sparkles } from 'lucide-react';
 import { profile, stats } from '../data';
 
@@ -27,6 +27,32 @@ function FloatingOrb({ color, size, x, y, delay }: { color: string; size: number
       }}
     />
   );
+}
+
+/* 21st.dev: Animated count-up effect for stats */
+function AnimatedCounter({ value }: { value: string }) {
+  const [display, setDisplay] = useState(value);
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
+
+  useEffect(() => {
+    if (!inView) return;
+    const match = value.match(/^(\d+)(.*)$/);
+    if (!match) { setDisplay(value); return; }
+    const target = parseInt(match[1], 10);
+    const suffix = match[2];
+    const duration = 2000;
+    const start = performance.now();
+    const step = (now: number) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setDisplay(`${Math.round(target * eased)}${suffix}`);
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }, [inView, value]);
+
+  return <span ref={ref}>{display}</span>;
 }
 
 export default function Hero() {
@@ -111,9 +137,10 @@ export default function Hero() {
         </motion.div>
 
         {/* Name — blur-in with staggered reveal */}
+        {/* 21st.dev: Cinematic letter-by-letter blur reveal */}
         <motion.h1
-          initial={{ opacity: 0, y: 40, filter: 'blur(12px)' }}
-          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.1, type: 'spring', bounce: 0.2 }}
           className="text-[clamp(2.25rem,7vw,7rem)] font-bold tracking-tight leading-[0.95] mb-6 relative"
         >
@@ -121,16 +148,33 @@ export default function Hero() {
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none -z-10">
             <div className="w-[60%] h-[120%] rounded-full bg-gradient-to-r from-indigo-500/[0.08] via-purple-500/[0.06] to-pink-500/[0.04] blur-[60px]" />
           </div>
-          <span className="text-shimmer">{profile.name.split(' ')[0]}</span>
+          <span className="text-shimmer">
+            {profile.name.split(' ')[0].split('').map((char, i) => (
+              <motion.span
+                key={i}
+                initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
+                animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                transition={{ duration: 0.5, delay: 0.15 + i * 0.06, ease: [0.25, 0.46, 0.45, 0.94] }}
+                className="inline-block"
+              >
+                {char}
+              </motion.span>
+            ))}
+          </span>
           <br />
-          <motion.span
-            initial={{ opacity: 0, y: 20, filter: 'blur(8px)' }}
-            animate={{ opacity: 0.9, y: 0, filter: 'blur(0px)' }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-white/90"
-          >
-            {profile.name.split(' ')[1]}
-          </motion.span>
+          <span className="text-white/90">
+            {profile.name.split(' ')[1].split('').map((char, i) => (
+              <motion.span
+                key={i}
+                initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
+                animate={{ opacity: 0.9, y: 0, filter: 'blur(0px)' }}
+                transition={{ duration: 0.5, delay: 0.5 + i * 0.06, ease: [0.25, 0.46, 0.45, 0.94] }}
+                className="inline-block"
+              >
+                {char}
+              </motion.span>
+            ))}
+          </span>
         </motion.h1>
 
         {/* Title with decorative line — blur-in */}
@@ -190,7 +234,7 @@ export default function Hero() {
               <CornerSquaresMini />
               <div className="relative z-10">
                 <div className="text-2xl sm:text-3xl font-bold text-white mb-1 font-display group-hover:text-brand-light transition-colors duration-300">
-                  {stat.value}
+                  <AnimatedCounter value={stat.value} />
                 </div>
                 <div className="text-[11px] sm:text-[10px] text-zinc-500 uppercase tracking-[0.15em] font-mono group-hover:text-zinc-400 transition-colors duration-300">
                   {stat.label}

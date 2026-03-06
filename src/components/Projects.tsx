@@ -668,16 +668,31 @@ export default function Projects() {
           className="mb-16"
         >
           <div className="flex items-center gap-4 mb-4">
-            <div className="w-12 h-[1px] bg-gradient-to-r from-brand to-transparent" />
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={inView ? { scaleX: 1 } : {}}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="w-12 h-[1px] bg-gradient-to-r from-brand to-transparent origin-left"
+            />
             <p className="section-heading mb-0">Portfolio</p>
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4">
+          <motion.h2
+            initial={{ opacity: 0, y: 20, filter: 'blur(8px)' }}
+            animate={inView ? { opacity: 1, y: 0, filter: 'blur(0px)' } : {}}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="text-4xl sm:text-5xl font-bold tracking-tight mb-4"
+          >
             Featured <span className="gradient-text">Apps</span>
-          </h2>
-          <p className="text-zinc-500 max-w-xl leading-relaxed">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, filter: 'blur(6px)' }}
+            animate={inView ? { opacity: 1, filter: 'blur(0px)' } : {}}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-zinc-500 max-w-xl leading-relaxed"
+          >
             Shipped to App Store & Google Play — serving millions of users across India and beyond.
             Each app built with obsessive attention to performance, accessibility, and delight.
-          </p>
+          </motion.p>
         </motion.div>
 
         {/* Featured projects — full-width showcase cards */}
@@ -711,7 +726,7 @@ export default function Projects() {
           className="mt-16 flex items-center justify-center gap-4"
         >
           <div className="w-24 h-[1px] bg-gradient-to-r from-transparent to-white/[0.06]" />
-          <span className="text-[11px] sm:text-[10px] font-mono text-zinc-600 tracking-widest">AND MORE IN PROGRESS</span>
+          <span className="text-[11px] sm:text-[10px] font-mono tracking-widest animated-shiny-text">AND MORE IN PROGRESS</span>
           <div className="w-24 h-[1px] bg-gradient-to-l from-transparent to-white/[0.06]" />
         </motion.div>
       </div>

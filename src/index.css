@@ -432,6 +432,41 @@
     transform: translateX(100%) translateY(100%);
   }
 
+  /* --- 21st.dev: Animated Shiny Text (silver shimmer sweep) --- */
+  .animated-shiny-text {
+    background: linear-gradient(
+      110deg,
+      rgba(113,113,122,0.8) 20%,
+      rgba(228,228,231,0.95) 47%,
+      rgba(113,113,122,0.8) 55%,
+      rgba(113,113,122,0.8) 80%
+    );
+    background-size: 250% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shinyText 5s ease-in-out infinite;
+  }
+
+  /* --- 21st.dev: Staggered Fade-In-Up for scroll reveals --- */
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(24px) scale(0.97);
+    filter: blur(6px);
+    animation: fadeInUp 0.7s ease forwards;
+  }
+
+  /* --- 21st.dev: Card Tilt Glow on Hover --- */
+  .tilt-glow {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .tilt-glow:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow:
+      0 20px 40px rgba(0, 0, 0, 0.3),
+      0 0 30px rgba(99, 102, 241, 0.06);
+  }
+
   /* --- Mobile Font Size Overrides --- */
   /* Bump tiny text sizes on small screens for readability */
   @media (max-width: 639px) {
@@ -537,4 +572,16 @@
 @keyframes blurIn {
   0% { opacity: 0; filter: blur(12px); transform: translateY(20px); }
   100% { opacity: 1; filter: blur(0px); transform: translateY(0); }
+}
+
+/* 21st.dev: Animated Shiny Text keyframe */
+@keyframes shinyText {
+  0% { background-position: 100% center; }
+  100% { background-position: -100% center; }
+}
+
+/* 21st.dev: Fade-In-Up with blur */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(24px) scale(0.97); filter: blur(6px); }
+  100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0px); }
 }

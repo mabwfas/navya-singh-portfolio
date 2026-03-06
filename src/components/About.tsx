@@ -39,7 +39,7 @@ function InteractiveCard({
     <div
       ref={ref}
       onMouseMove={handleMouseMove}
-      className={`dark-card corner-squares rounded-xl overflow-hidden ${className}`}
+      className={`dark-card corner-squares rounded-xl overflow-hidden glass-glow ${className}`}
     >
       <span className="sq sq-tl" /><span className="sq sq-tr" />
       <span className="sq sq-bl" /><span className="sq sq-br" />
@@ -57,18 +57,37 @@ export default function About() {
       <div className="absolute inset-0 dot-bg opacity-20 pointer-events-none" />
 
       <div className="mx-auto max-w-6xl relative z-10" ref={sectionRef}>
-        <FadeIn>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7 }}
+        >
           <div className="flex items-center gap-4 mb-4">
-            <div className="w-12 h-[1px] bg-gradient-to-r from-brand to-transparent" />
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={inView ? { scaleX: 1 } : {}}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="w-12 h-[1px] bg-gradient-to-r from-brand to-transparent origin-left"
+            />
             <p className="section-heading mb-0">About</p>
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4">
+          <motion.h2
+            initial={{ opacity: 0, y: 20, filter: 'blur(8px)' }}
+            animate={inView ? { opacity: 1, y: 0, filter: 'blur(0px)' } : {}}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="text-4xl sm:text-5xl font-bold tracking-tight mb-4"
+          >
             Crafting Mobile <span className="gradient-text">Experiences</span>
-          </h2>
-          <p className="text-zinc-500 max-w-xl leading-relaxed mb-14">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, filter: 'blur(6px)' }}
+            animate={inView ? { opacity: 1, filter: 'blur(0px)' } : {}}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-zinc-500 max-w-xl leading-relaxed mb-14"
+          >
             A decade of shipping apps that millions rely on daily — from payments to fitness, e-commerce to streaming.
-          </p>
-        </FadeIn>
+          </motion.p>
+        </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 mb-16">
           {/* Left — Bio + Testimonials */}

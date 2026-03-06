@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
 const links = [
@@ -14,6 +14,12 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const { scrollYProgress } = useScroll();
+
+  useMotionValueEvent(scrollYProgress, 'change', (latest) => {
+    setScrollProgress(latest);
+  });
 
   useEffect(() => {
     const onScroll = () => {
@@ -130,6 +136,16 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* 21st.dev: Scroll progress indicator */}
+      <motion.div
+        className="absolute bottom-0 left-0 right-0 h-[2px] origin-left"
+        style={{
+          scaleX: scrollProgress,
+          transformOrigin: '0% 50%',
+          background: 'linear-gradient(90deg, #6366f1, #a855f7, #ec4899)',
+        }}
+      />
     </motion.nav>
   );
 }
