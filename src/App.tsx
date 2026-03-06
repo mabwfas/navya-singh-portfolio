@@ -1,5 +1,6 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import Showcase from './components/Showcase';
 import About from './components/About';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
@@ -12,6 +13,7 @@ export default function App() {
     <div className="min-h-screen bg-[#050505] text-white overflow-x-hidden antialiased">
       <Navbar />
       <Hero />
+      <Showcase />
       <About />
       <Experience />
       <Projects />
