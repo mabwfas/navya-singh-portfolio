@@ -49,7 +49,7 @@ export const experience = [
     ],
   },
   {
-    role: 'Lead Mobile Architect',
+    role: 'Lead Mobile App Developer',
     company: 'Flipkart (Walmart Inc.)',
     type: 'Full-time',
     location: 'Bengaluru, India',
@@ -62,7 +62,7 @@ export const experience = [
     ],
   },
   {
-    role: 'Senior Mobile Developer',
+    role: 'Senior Mobile App Developer',
     company: 'Razorpay',
     type: 'Full-time',
     location: 'Bengaluru, India',
@@ -75,7 +75,7 @@ export const experience = [
     ],
   },
   {
-    role: 'Mobile Developer',
+    role: 'Mobile App Developer',
     company: 'CRED',
     type: 'Full-time',
     location: 'Bengaluru, India',
@@ -88,7 +88,7 @@ export const experience = [
     ],
   },
   {
-    role: 'Junior Mobile Developer',
+    role: 'Junior Mobile App Developer',
     company: 'Paytm (One97 Communications)',
     type: 'Full-time',
     location: 'Noida, India',
