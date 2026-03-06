@@ -1,11 +1,11 @@
 export const profile = {
-  name: 'Navya Singh',
-  initials: 'NS',
+  name: 'Shreyansh Singh',
+  initials: 'SS',
   title: 'Senior Mobile App Developer & Cross-Platform Architect',
   tagline: 'Building high-performance mobile experiences for 50M+ users',
   bio: `Elite mobile developer with 10+ years building high-performance iOS, Android, and cross-platform applications for India's top tech companies and global startups. Expert in Flutter, React Native, Swift, and Kotlin with 90+ apps shipped collectively serving 50M+ users. Built payment, e-commerce, and fintech apps processing ₹15,000 Cr+ in transactions.`,
-  email: 'aestheticsbynao@gmail.com',
-  phone: '+91 70520 93314',
+  email: 'realshreyanshsingh@gmail.com',
+  phone: '+91 88277 41992',
   location: 'Lucknow, UP, India',
 };
 
@@ -190,22 +190,22 @@ export const certifications = [
 
 export const testimonials = [
   {
-    quote: 'Navya delivered our Flutter fintech app 10 days ahead of schedule with performance numbers that blew our benchmarks away. The offline-first architecture she designed works flawlessly in rural Rajasthan where our users have spotty 3G connectivity. Absolutely world-class mobile engineering.',
+    quote: 'Shreyansh delivered our Flutter fintech app 10 days ahead of schedule with performance numbers that blew our benchmarks away. The offline-first architecture he designed works flawlessly in rural Rajasthan where our users have spotty 3G connectivity. Absolutely world-class mobile engineering.',
     author: 'Arjun Mehta',
     role: 'Co-Founder & CTO, KisanCredit (YC W23)',
   },
   {
-    quote: 'Best mobile developer we have ever worked with, period. Navya built our entire StyleBazaar e-commerce app from scratch in 14 weeks — we launched with 4.9 stars on both stores and zero critical bugs in the first 3 months. Her attention to performance on low-end Android devices was remarkable.',
+    quote: 'Best mobile developer we have ever worked with, period. Shreyansh built our entire StyleBazaar e-commerce app from scratch in 14 weeks — we launched with 4.9 stars on both stores and zero critical bugs in the first 3 months. His attention to performance on low-end Android devices was remarkable.',
     author: 'Fatima Al-Rashid',
     role: 'CEO, Zarqa Retail Group (Dubai)',
   },
   {
-    quote: 'We brought Navya in to rescue a React Native app that was crashing for 30% of users. Within 6 weeks she rewrote the state management layer, fixed 47 memory leaks, and got our crash-free rate to 99.8%. She then stayed on to build our live streaming feature which is now our highest-revenue channel.',
+    quote: 'We brought Shreyansh in to rescue a React Native app that was crashing for 30% of users. Within 6 weeks he rewrote the state management layer, fixed 47 memory leaks, and got our crash-free rate to 99.8%. He then stayed on to build our live streaming feature which is now our highest-revenue channel.',
     author: 'Prateek Sharma',
     role: 'VP Engineering, Meesho',
   },
   {
-    quote: 'Navya architected our health tracking SDK that now powers 12 partner apps across Southeast Asia. Her deep knowledge of HealthKit and Google Fit APIs saved us months of R&D. She is genuinely one of the top 3 mobile engineers I have worked with in 15 years.',
+    quote: 'Shreyansh architected our health tracking SDK that now powers 12 partner apps across Southeast Asia. His deep knowledge of HealthKit and Google Fit APIs saved us months of R&D. He is genuinely one of the top 3 mobile engineers I have worked with in 15 years.',
     author: 'Dr. Sneha Kulkarni',
     role: 'Head of Product, HealthifyMe',
   },

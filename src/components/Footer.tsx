@@ -8,10 +8,10 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl relative z-10">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <span className="text-lg font-bold text-shimmer">NS</span>
+            <span className="text-lg font-bold text-shimmer">SS</span>
             <div className="w-[1px] h-4 bg-white/[0.06]" />
             <p className="text-xs sm:text-[11px] text-zinc-600 font-mono">
-              &copy; {new Date().getFullYear()} Navya Singh
+              &copy; {new Date().getFullYear()} Shreyansh Singh
             </p>
           </div>
 

@@ -62,7 +62,7 @@ export default function Showcase() {
             <div className="flex-1 flex justify-center">
               <div className="flex items-center gap-2 px-4 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-[10px] text-zinc-500 font-mono">
                 <span className="text-green-400/60">https://</span>
-                navya-singh-portfolio.vercel.app
+                shreyansh-singh-portfolio.vercel.app
               </div>
             </div>
           </div>
