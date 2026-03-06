@@ -148,14 +148,14 @@ export default function Hero() {
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none -z-10">
             <div className="w-[60%] h-[120%] rounded-full bg-gradient-to-r from-indigo-500/[0.08] via-purple-500/[0.06] to-pink-500/[0.04] blur-[60px]" />
           </div>
-          <span className="text-shimmer">
+          <span>
             {profile.name.split(' ')[0].split('').map((char, i) => (
               <motion.span
                 key={i}
                 initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
                 animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
                 transition={{ duration: 0.5, delay: 0.15 + i * 0.06, ease: [0.25, 0.46, 0.45, 0.94] }}
-                className="inline-block"
+                className="inline-block text-shimmer"
               >
                 {char}
               </motion.span>
