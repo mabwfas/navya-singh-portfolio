@@ -26,7 +26,7 @@ function SkillGauge({ skill, index }: { skill: (typeof skills)[0]; index: number
       transition={{ duration: 0.5, delay: index * 0.07 }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="dark-card corner-squares rounded-xl p-4 flex flex-col items-center gap-3 group cursor-default"
+      className="dark-card corner-squares rounded-xl p-4 flex flex-col items-center gap-3 group cursor-default glass-glow gauge-shine"
     >
       <span className="sq sq-tl" /><span className="sq sq-tr" />
       <span className="sq sq-bl" /><span className="sq sq-br" />
@@ -69,7 +69,7 @@ function SkillGauge({ skill, index }: { skill: (typeof skills)[0]; index: number
         </div>
       </div>
 
-      <span className="text-xs text-zinc-400 text-center leading-tight group-hover:text-zinc-300 transition-colors">
+      <span className="text-xs text-zinc-400 text-center leading-tight group-hover:text-white transition-colors duration-300">
         {skill.name}
       </span>
     </motion.div>
@@ -134,22 +134,38 @@ export default function Skills() {
           className="mb-14"
         >
           <div className="flex items-center gap-4 mb-4">
-            <div className="w-12 h-[1px] bg-gradient-to-r from-brand to-transparent" />
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={inView ? { scaleX: 1 } : {}}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="w-12 h-[1px] bg-gradient-to-r from-brand to-transparent origin-left"
+            />
             <p className="section-heading mb-0">Expertise</p>
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4">
+          <motion.h2
+            initial={{ opacity: 0, y: 20, filter: 'blur(8px)' }}
+            animate={inView ? { opacity: 1, y: 0, filter: 'blur(0px)' } : {}}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="text-4xl sm:text-5xl font-bold tracking-tight mb-4"
+          >
             Technical <span className="gradient-text">Arsenal</span>
-          </h2>
-          <p className="text-zinc-500 max-w-lg leading-relaxed">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, filter: 'blur(6px)' }}
+            animate={inView ? { opacity: 1, filter: 'blur(0px)' } : {}}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-zinc-500 max-w-lg leading-relaxed"
+          >
             Mastery across the full mobile development spectrum — from native iOS/Android to
             cross-platform frameworks and cloud infrastructure.
-          </p>
+          </motion.p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-14">
           {/* Radial skill gauges */}
           <div>
             <h3 className="text-xs uppercase tracking-[0.2em] text-zinc-500 font-mono mb-6 flex items-center gap-3">
+              <span className="w-2 h-2 rounded-full bg-brand/60" />
               <div className="w-6 h-[1px] bg-brand/40" />
               Proficiency
             </h3>
@@ -165,6 +181,10 @@ export default function Skills() {
             {Object.entries(techStack).map(([category, techs], ci) => (
               <div key={category}>
                 <h3 className="text-xs uppercase tracking-[0.2em] text-zinc-500 font-mono mb-4 flex items-center gap-3">
+                  <span
+                    className="w-2 h-2 rounded-full"
+                    style={{ background: `${categoryColors[category]}80` }}
+                  />
                   <div
                     className="w-6 h-[1px]"
                     style={{ background: `${categoryColors[category]}60` }}
@@ -196,9 +216,10 @@ export default function Skills() {
               .map((tech, i) => (
                 <span
                   key={`${tech}-${i}`}
-                  className="text-xs text-zinc-600 font-mono whitespace-nowrap"
+                  className="text-xs text-zinc-600 font-mono whitespace-nowrap flex items-center gap-6"
                 >
                   {tech}
+                  <span className="w-1 h-1 rounded-full bg-zinc-700/60" />
                 </span>
               ))}
           </div>

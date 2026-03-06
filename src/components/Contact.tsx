@@ -50,17 +50,37 @@ export default function Contact() {
           className="text-center mb-14"
         >
           <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="w-12 h-[1px] bg-gradient-to-r from-transparent to-brand/40" />
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={inView ? { scaleX: 1 } : {}}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="w-12 h-[1px] bg-gradient-to-r from-transparent to-brand/40 origin-right"
+            />
             <p className="section-heading mb-0">Contact</p>
-            <div className="w-12 h-[1px] bg-gradient-to-l from-transparent to-brand/40" />
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={inView ? { scaleX: 1 } : {}}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="w-12 h-[1px] bg-gradient-to-l from-transparent to-brand/40 origin-left"
+            />
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4">
+          <motion.h2
+            initial={{ opacity: 0, y: 20, filter: 'blur(8px)' }}
+            animate={inView ? { opacity: 1, y: 0, filter: 'blur(0px)' } : {}}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="text-4xl sm:text-5xl font-bold tracking-tight mb-4"
+          >
             Let's Build <span className="gradient-text">Together</span>
-          </h2>
-          <p className="text-zinc-500 max-w-md mx-auto leading-relaxed">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, filter: 'blur(6px)' }}
+            animate={inView ? { opacity: 1, filter: 'blur(0px)' } : {}}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-zinc-500 max-w-md mx-auto leading-relaxed"
+          >
             Available for freelance projects, consulting, and full-time opportunities.
             Let's create something extraordinary.
-          </p>
+          </motion.p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-6">
@@ -71,7 +91,7 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="space-y-5"
           >
-            <InteractiveCard className="p-6">
+            <InteractiveCard className="p-6 glass-glow">
               <div className="relative z-10 space-y-5">
                 {[
                   { icon: Mail, label: 'Email', value: profile.email, href: `mailto:${profile.email}`, color: '#6366f1' },
@@ -113,7 +133,7 @@ export default function Contact() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.4 }}
               whileHover={{ y: -3, transition: { duration: 0.2 } }}
-              className="dark-card corner-squares rounded-xl p-5 flex items-center gap-4 group block"
+              className="dark-card corner-squares rounded-xl p-5 flex items-center gap-4 group block glass-glow"
             >
               <span className="sq sq-tl" /><span className="sq sq-tr" />
               <span className="sq sq-bl" /><span className="sq sq-br" />
@@ -142,7 +162,7 @@ export default function Contact() {
                   { label: 'Name', type: 'text', placeholder: 'Your name' },
                   { label: 'Email', type: 'email', placeholder: 'your@email.com' },
                 ].map(({ label, type, placeholder }) => (
-                  <div key={label}>
+                  <div key={label} className="input-glow">
                     <label className="text-[11px] sm:text-[10px] text-zinc-500 uppercase tracking-[0.2em] font-mono mb-2 block">
                       {label}
                     </label>
@@ -153,7 +173,7 @@ export default function Contact() {
                     />
                   </div>
                 ))}
-                <div>
+                <div className="input-glow">
                   <label className="text-[11px] sm:text-[10px] text-zinc-500 uppercase tracking-[0.2em] font-mono mb-2 block">
                     Message
                   </label>
@@ -163,15 +183,17 @@ export default function Contact() {
                     className="w-full bg-white/[0.03] border border-white/[0.06] rounded-lg px-4 py-3 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-brand/40 focus:bg-white/[0.04] transition-all duration-300 resize-none"
                   />
                 </div>
-                <button
+                <motion.button
                   type="submit"
+                  whileHover={{ scale: 1.01, transition: { duration: 0.2 } }}
+                  whileTap={{ scale: 0.98 }}
                   className="w-full rounded-lg bg-brand py-3.5 text-sm font-medium text-white hover:bg-brand-light transition-all duration-300 glow-brand shine-sweep flex items-center justify-center gap-2"
                 >
                   <span className="relative z-10 flex items-center gap-2">
                     <Send size={14} />
                     Send Message
                   </span>
-                </button>
+                </motion.button>
               </form>
             </InteractiveCard>
           </motion.div>

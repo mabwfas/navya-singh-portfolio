@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import { ArrowDown, MapPin, Smartphone, Sparkles } from 'lucide-react';
+import { MapPin, Smartphone, Sparkles } from 'lucide-react';
 import { profile, stats } from '../data';
 
 function FloatingOrb({ color, size, x, y, delay }: { color: string; size: number; x: string; y: string; delay: number }) {
@@ -93,51 +93,75 @@ export default function Hero() {
         style={{ y, opacity }}
         className="relative z-10 text-center max-w-4xl w-full"
       >
-        {/* Badge */}
+        {/* Badge — blur-in reveal */}
         <motion.div
-          initial={{ opacity: 0, y: 20, scale: 0.9 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-          className="inline-flex items-center gap-2.5 rounded-full glass-raised px-5 py-2.5 mb-10"
+          initial={{ opacity: 0, y: 20, filter: 'blur(10px)' }}
+          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          transition={{ delay: 0.3, duration: 0.8, type: 'spring', bounce: 0.3 }}
+          className="inline-flex items-center gap-2.5 rounded-full glass-raised px-5 py-2.5 mb-10 glass-glow"
         >
           <Smartphone size={13} className="text-brand" />
           <span className="text-xs sm:text-[11px] text-zinc-400 font-mono tracking-[0.2em] uppercase">
             Mobile App Architect
           </span>
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+          </span>
         </motion.div>
 
-        {/* Name — large editorial treatment */}
+        {/* Name — blur-in with staggered reveal */}
         <motion.h1
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="text-[clamp(2.25rem,7vw,7rem)] font-bold tracking-tight leading-[0.95] mb-6"
+          initial={{ opacity: 0, y: 40, filter: 'blur(12px)' }}
+          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          transition={{ duration: 1, delay: 0.1, type: 'spring', bounce: 0.2 }}
+          className="text-[clamp(2.25rem,7vw,7rem)] font-bold tracking-tight leading-[0.95] mb-6 relative"
         >
+          {/* Dramatic glow behind name */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none -z-10">
+            <div className="w-[60%] h-[120%] rounded-full bg-gradient-to-r from-indigo-500/[0.08] via-purple-500/[0.06] to-pink-500/[0.04] blur-[60px]" />
+          </div>
           <span className="text-shimmer">{profile.name.split(' ')[0]}</span>
           <br />
-          <span className="text-white/90">{profile.name.split(' ')[1]}</span>
+          <motion.span
+            initial={{ opacity: 0, y: 20, filter: 'blur(8px)' }}
+            animate={{ opacity: 0.9, y: 0, filter: 'blur(0px)' }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="text-white/90"
+          >
+            {profile.name.split(' ')[1]}
+          </motion.span>
         </motion.h1>
 
-        {/* Title with decorative line */}
+        {/* Title with decorative line — blur-in */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.6 }}
+          initial={{ opacity: 0, y: 20, filter: 'blur(8px)' }}
+          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          transition={{ delay: 0.5, duration: 0.8, type: 'spring', bounce: 0.3 }}
           className="flex items-center justify-center gap-4 mb-3"
         >
-          <div className="hidden sm:block w-12 h-[1px] bg-gradient-to-r from-transparent to-brand/40" />
+          <motion.div
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ delay: 0.8, duration: 0.6 }}
+            className="hidden sm:block w-16 h-[1px] bg-gradient-to-r from-transparent via-brand/50 to-brand/20 origin-right"
+          />
           <p className="text-base sm:text-lg text-zinc-400 max-w-xl px-2">
             {profile.title}
           </p>
-          <div className="hidden sm:block w-12 h-[1px] bg-gradient-to-l from-transparent to-brand/40" />
+          <motion.div
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ delay: 0.8, duration: 0.6 }}
+            className="hidden sm:block w-16 h-[1px] bg-gradient-to-l from-transparent via-brand/50 to-brand/20 origin-left"
+          />
         </motion.div>
 
         {/* Location */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
+          initial={{ opacity: 0, filter: 'blur(6px)' }}
+          animate={{ opacity: 1, filter: 'blur(0px)' }}
+          transition={{ delay: 0.7, duration: 0.6 }}
           className="flex items-center justify-center gap-2 text-zinc-600 text-sm mb-12"
         >
           <MapPin size={12} />
@@ -161,14 +185,14 @@ export default function Hero() {
                 y: -4,
                 transition: { duration: 0.25 },
               }}
-              className="dark-card corner-squares rounded-xl p-4 text-center group"
+              className="dark-card corner-squares rounded-xl p-4 text-center group glass-glow backdrop-blur-sm"
             >
               <CornerSquaresMini />
               <div className="relative z-10">
-                <div className="text-2xl sm:text-3xl font-bold text-white mb-1 font-display">
+                <div className="text-2xl sm:text-3xl font-bold text-white mb-1 font-display group-hover:text-brand-light transition-colors duration-300">
                   {stat.value}
                 </div>
-                <div className="text-[11px] sm:text-[10px] text-zinc-500 uppercase tracking-[0.15em] font-mono">
+                <div className="text-[11px] sm:text-[10px] text-zinc-500 uppercase tracking-[0.15em] font-mono group-hover:text-zinc-400 transition-colors duration-300">
                   {stat.label}
                 </div>
               </div>
@@ -201,17 +225,15 @@ export default function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator — capsule with pulsing dot */}
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.8 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.8, duration: 0.6 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3"
       >
         <span className="text-[11px] sm:text-[9px] font-mono text-zinc-600 tracking-widest uppercase">Scroll</span>
-        <motion.div animate={{ y: [0, 6, 0] }} transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}>
-          <ArrowDown size={16} className="text-zinc-600" />
-        </motion.div>
+        <div className="scroll-capsule" />
       </motion.div>
     </section>
   );
