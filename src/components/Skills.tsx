@@ -13,8 +13,9 @@ function SkillGauge({ skill, index }: { skill: (typeof skills)[0]; index: number
   const offset = circumference - (skill.level / 100) * circumference;
 
   const categoryColors: Record<string, string> = {
-    mobile: '#6366f1',
+    frontend: '#6366f1',
     backend: '#10b981',
+    design: '#f59e0b',
   };
   const color = categoryColors[skill.category] || '#6366f1';
 
@@ -113,7 +114,7 @@ function TechTag({ tech, color, delay }: { tech: string; color: string; delay: n
 }
 
 const categoryColors: Record<string, string> = {
-  mobile: '#6366f1',
+  frontend: '#6366f1',
   backend: '#10b981',
   tools: '#f59e0b',
 };
@@ -156,8 +157,8 @@ export default function Skills() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-zinc-500 max-w-lg leading-relaxed"
           >
-            Mastery across the full mobile development spectrum — from native iOS/Android to
-            cross-platform frameworks and cloud infrastructure.
+            Mastery across the full web development spectrum — from pixel-perfect frontends to
+            scalable backends and cloud infrastructure.
           </motion.p>
         </motion.div>
 

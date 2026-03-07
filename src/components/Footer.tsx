@@ -8,10 +8,10 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl relative z-10">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <span className="text-lg font-bold text-shimmer">SS</span>
+            <span className="text-lg font-bold text-shimmer">VRS</span>
             <div className="w-[1px] h-4 bg-white/[0.06]" />
             <p className="text-xs sm:text-[11px] text-zinc-600 font-mono">
-              &copy; {new Date().getFullYear()} Shreyansh Singh
+              &copy; {new Date().getFullYear()} Vivek Raj Singh
             </p>
           </div>
 
@@ -25,7 +25,7 @@ export default function Footer() {
               >
                 &#9829;
               </motion.span>
-              <span>in Lucknow</span>
+              <span>in Mumbai</span>
             </div>
             <div className="w-[1px] h-3 bg-white/[0.04]" />
             <span className="text-[11px] sm:text-[10px] text-zinc-700 font-mono">React + Tailwind</span>

@@ -16,10 +16,8 @@ function TimelineItem({ item, index }: { item: (typeof experience)[0]; index: nu
 
   const companyColors: Record<string, string> = {
     'Self-Employed': '#10b981',
-    'Flipkart (Walmart Inc.)': '#f59e0b',
     Razorpay: '#6366f1',
-    CRED: '#ec4899',
-    'Paytm (One97 Communications)': '#06b6d4',
+    Freshworks: '#f59e0b',
   };
 
   const color = companyColors[item.company] || '#6366f1';
@@ -184,8 +182,8 @@ export default function Experience() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-zinc-500 max-w-lg leading-relaxed"
           >
-            From Paytm's hypergrowth to Flipkart's next-gen architecture — a decade of
-            shipping at India's most ambitious companies.
+            From Freshworks' enterprise CRM to Razorpay's payment dashboard — 6+ years of
+            shipping at India's most ambitious tech companies.
           </motion.p>
         </motion.div>
 

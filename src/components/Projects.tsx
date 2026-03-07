@@ -4,12 +4,12 @@ import { projects } from '../data';
 import { ArrowUpRight, Download, Star, Zap, Shield, TrendingUp, Smartphone, Activity } from 'lucide-react';
 
 const projectImages: Record<string, string> = {
-  NidhiPay: '/projects/nidhipay.jpg',
-  VitalSync: '/projects/vitalsync.jpg',
-  LiveKart: '/projects/livekart.jpg',
-  StyleBazaar: '/projects/stylebazaar.jpg',
-  DabbaRun: '/projects/dabbarun.jpg',
-  Raagify: '/projects/raagify.jpg',
+  ShopKart: '/projects/shopkart.jpeg',
+  DevBoard: '/projects/devboard.jpeg',
+  PortfolioForge: '/projects/portfolioforge.jpeg',
+  CloudNotes: '/projects/cloudnotes.jpeg',
+  AnalyticsHQ: '/projects/analyticshq.jpeg',
+  DesignKit: '/projects/designkit.jpeg',
 };
 
 /* ── Corner squares — 21st.dev Dark Grid ── */
@@ -177,7 +177,7 @@ function FeaturedProjectCard({
   }, []);
 
   const imgSrc = projectImages[project.title];
-  const isFinance = project.title === 'NidhiPay';
+  const isFinance = project.title === 'ShopKart';
 
   return (
     <motion.div
@@ -357,16 +357,16 @@ function FeaturedProjectCard({
           <div className="grid grid-cols-2 gap-2 mb-6">
             {(isFinance
               ? [
-                  { icon: Shield, label: 'Biometric Auth' },
-                  { icon: Zap, label: 'AI Categorization' },
+                  { icon: Shield, label: 'Secure Payments' },
+                  { icon: Zap, label: 'AI Recommendations' },
                   { icon: Star, label: '4.9★ Rating' },
-                  { icon: Download, label: 'Play Store #1' },
+                  { icon: TrendingUp, label: '₹200 Cr+ GMV' },
                 ]
               : [
-                  { icon: Activity, label: 'Real-time Tracking' },
-                  { icon: Smartphone, label: 'Cross-Platform' },
-                  { icon: Star, label: 'AI Coaching' },
-                  { icon: TrendingUp, label: 'Health Insights' },
+                  { icon: Activity, label: 'Real-time Sync' },
+                  { icon: Smartphone, label: 'Responsive' },
+                  { icon: Star, label: 'AI-Powered' },
+                  { icon: TrendingUp, label: '50K+ Users' },
                 ]
             ).map((feat, fi) => (
               <motion.div
@@ -419,9 +419,9 @@ function FeaturedProjectCard({
         {isFinance ? (
           <>
             <FloatingWidget
-              icon={Download}
-              label="Downloads"
-              value="628,451"
+              icon={TrendingUp}
+              label="Monthly GMV"
+              value="₹200 Cr+"
               color={project.color}
               delay={0.8}
               position="top-5 right-5 md:top-auto md:bottom-20 md:left-[38%]"
@@ -433,7 +433,7 @@ function FeaturedProjectCard({
             <FloatingWidget
               icon={Activity}
               label="Active Users"
-              value="1.52M"
+              value="50K+"
               color={project.color}
               delay={0.8}
               position="top-5 left-5 md:top-auto md:bottom-20 md:right-[38%]"
@@ -682,7 +682,7 @@ export default function Projects() {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="text-4xl sm:text-5xl font-bold tracking-tight mb-4"
           >
-            Featured <span className="gradient-text">Apps</span>
+            Featured <span className="gradient-text">Projects</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, filter: 'blur(6px)' }}
@@ -690,8 +690,8 @@ export default function Projects() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-zinc-500 max-w-xl leading-relaxed"
           >
-            Shipped to App Store & Google Play — serving millions of users across India and beyond.
-            Each app built with obsessive attention to performance, accessibility, and delight.
+            Production-grade web applications serving millions of users across India and beyond.
+            Each project built with obsessive attention to performance, accessibility, and delight.
           </motion.p>
         </motion.div>
 

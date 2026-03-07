@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
-import { MapPin, Smartphone, Sparkles } from 'lucide-react';
+import { MapPin, Globe, Sparkles } from 'lucide-react';
 import { profile, stats } from '../data';
 
 function FloatingOrb({ color, size, x, y, delay }: { color: string; size: number; x: string; y: string; delay: number }) {
@@ -126,9 +126,9 @@ export default function Hero() {
           transition={{ delay: 0.3, duration: 0.8, type: 'spring', bounce: 0.3 }}
           className="inline-flex items-center gap-2.5 rounded-full glass-raised px-5 py-2.5 mb-10 glass-glow"
         >
-          <Smartphone size={13} className="text-brand" />
+          <Globe size={13} className="text-brand" />
           <span className="text-xs sm:text-[11px] text-zinc-400 font-mono tracking-[0.2em] uppercase">
-            Mobile App Architect
+            Full-Stack Web Developer
           </span>
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
@@ -149,7 +149,7 @@ export default function Hero() {
             <div className="w-[60%] h-[120%] rounded-full bg-gradient-to-r from-indigo-500/[0.08] via-purple-500/[0.06] to-pink-500/[0.04] blur-[60px]" />
           </div>
           <span>
-            {profile.name.split(' ')[0].split('').map((char, i) => (
+            {profile.name.split(' ').slice(0, -1).join(' ').split('').map((char, i) => (
               <motion.span
                 key={i}
                 initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
@@ -157,13 +157,13 @@ export default function Hero() {
                 transition={{ duration: 0.5, delay: 0.15 + i * 0.06, ease: [0.25, 0.46, 0.45, 0.94] }}
                 className="inline-block text-shimmer"
               >
-                {char}
+                {char === ' ' ? '\u00A0' : char}
               </motion.span>
             ))}
           </span>
           <br />
           <span className="text-white/90">
-            {profile.name.split(' ')[1].split('').map((char, i) => (
+            {profile.name.split(' ').slice(-1)[0].split('').map((char, i) => (
               <motion.span
                 key={i}
                 initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}

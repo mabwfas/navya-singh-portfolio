@@ -1,5 +1,5 @@
 import { ContainerScroll } from './ui/container-scroll-animation';
-import { Smartphone, Code2, Layers, Rocket } from 'lucide-react';
+import { Globe, Code2, Layers, Rocket } from 'lucide-react';
 
 export default function Showcase() {
   return (
@@ -15,12 +15,12 @@ export default function Showcase() {
             <div className="inline-flex items-center gap-2 rounded-full px-4 py-2 mb-6 border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm">
               <Rocket size={12} className="text-indigo-400" />
               <span className="text-[11px] font-mono text-zinc-400 tracking-widest uppercase">
-                App Showcase
+                Project Showcase
               </span>
             </div>
 
             <h2 className="text-4xl md:text-[4.5rem] font-bold text-white leading-[1.1] tracking-tight mb-4">
-              Crafting Apps That{' '}
+              Building Apps That{' '}
               <br className="hidden md:block" />
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
                 Users Love
@@ -28,16 +28,16 @@ export default function Showcase() {
             </h2>
 
             <p className="text-zinc-500 text-sm md:text-base max-w-lg mx-auto mb-8 leading-relaxed">
-              From concept to App Store — pixel-perfect mobile experiences
+              From concept to production — pixel-perfect web experiences
               engineered for performance, delight, and scale.
             </p>
 
             {/* Mini stats row */}
             <div className="flex items-center gap-6 md:gap-10">
               {[
-                { icon: Smartphone, label: '90+ Apps', color: '#6366f1' },
-                { icon: Code2, label: '10+ Years', color: '#a855f7' },
-                { icon: Layers, label: '50M+ Users', color: '#ec4899' },
+                { icon: Globe, label: '40+ Projects', color: '#6366f1' },
+                { icon: Code2, label: '6+ Years', color: '#a855f7' },
+                { icon: Layers, label: '2M+ Users', color: '#ec4899' },
               ].map((item) => (
                 <div key={item.label} className="flex items-center gap-2">
                   <item.icon size={14} style={{ color: item.color }} />
@@ -62,7 +62,7 @@ export default function Showcase() {
             <div className="flex-1 flex justify-center">
               <div className="flex items-center gap-2 px-4 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-[10px] text-zinc-500 font-mono">
                 <span className="text-green-400/60">https://</span>
-                shreyansh-singh-portfolio.vercel.app
+                vivekrajsingh.dev
               </div>
             </div>
           </div>
@@ -73,12 +73,12 @@ export default function Showcase() {
             <div className="col-span-3 hidden md:flex flex-col gap-3">
               <div className="rounded-xl bg-gradient-to-br from-indigo-500/20 to-purple-500/10 border border-indigo-500/20 p-4 flex-shrink-0">
                 <div className="w-8 h-8 rounded-lg bg-indigo-500/30 flex items-center justify-center mb-3">
-                  <Smartphone size={16} className="text-indigo-400" />
+                  <Globe size={16} className="text-indigo-400" />
                 </div>
-                <div className="text-sm font-semibold text-white mb-1">NidhiPay</div>
+                <div className="text-sm font-semibold text-white mb-1">ShopKart</div>
                 <div className="text-[10px] text-zinc-500 font-mono">v3.2.1 • Live</div>
               </div>
-              {['VitalSync', 'LiveKart', 'StyleBazaar', 'DabbaRun'].map((app, i) => (
+              {['DevBoard', 'PortfolioForge', 'CloudNotes', 'AnalyticsHQ'].map((app, i) => (
                 <div
                   key={app}
                   className="rounded-lg bg-white/[0.02] border border-white/[0.04] p-3 hover:bg-white/[0.04] transition-colors"
@@ -96,10 +96,10 @@ export default function Showcase() {
               {/* Top metrics row */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3">
                 {[
-                  { label: 'Downloads', value: '628K', change: '+12.5%', color: '#6366f1' },
-                  { label: 'Active Users', value: '1.52M', change: '+8.3%', color: '#10b981' },
-                  { label: 'Revenue', value: '₹15.2Cr', change: '+23.1%', color: '#f59e0b' },
-                  { label: 'App Rating', value: '4.9★', change: '+0.2', color: '#ec4899' },
+                  { label: 'Projects', value: '40+', change: '+8 this year', color: '#6366f1' },
+                  { label: 'Active Users', value: '2M+', change: '+34.2%', color: '#10b981' },
+                  { label: 'GMV Processed', value: '₹500Cr+', change: '+45.1%', color: '#f59e0b' },
+                  { label: 'Client Rating', value: '5.0★', change: '100%', color: '#ec4899' },
                 ].map((metric) => (
                   <div
                     key={metric.label}
