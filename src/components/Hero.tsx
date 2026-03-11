@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
-import { MapPin, Globe, Sparkles } from 'lucide-react';
+import { MapPin, Globe, Sparkles, FileText, Star } from 'lucide-react';
 import { profile, stats } from '../data';
 
 function FloatingOrb({ color, size, x, y, delay }: { color: string; size: number; x: string; y: string; delay: number }) {
@@ -124,16 +124,41 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20, filter: 'blur(10px)' }}
           animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           transition={{ delay: 0.3, duration: 0.8, type: 'spring', bounce: 0.3 }}
-          className="inline-flex items-center gap-2.5 rounded-full glass-raised px-5 py-2.5 mb-10 glass-glow"
+          className="inline-flex items-center gap-2.5 rounded-full glass-raised px-5 py-2.5 mb-6 glass-glow"
         >
           <Globe size={13} className="text-brand" />
           <span className="text-xs sm:text-[11px] text-zinc-400 font-mono tracking-[0.2em] uppercase">
-            Full-Stack Web Developer
+            Mobile App Architect
           </span>
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
             <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
           </span>
+        </motion.div>
+
+        {/* Profile photo */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.4, duration: 0.6, type: 'spring', bounce: 0.3 }}
+          className="mb-6"
+        >
+          <div className="relative w-28 h-28 mx-auto rounded-full p-[3px]" style={{ background: 'conic-gradient(from 0deg, #6366f1, #a855f7, #ec4899, #f59e0b, #10b981, #6366f1)' }}>
+            <img
+              src="/shreyansh.jpg"
+              alt="Shreyansh Singh"
+              className="w-full h-full rounded-full object-cover border-2 border-[#0a0a0a]"
+              onError={(e) => {
+                const target = e.currentTarget;
+                target.style.display = 'none';
+                const fallback = target.nextElementSibling as HTMLElement;
+                if (fallback) fallback.style.display = 'flex';
+              }}
+            />
+            <div className="w-full h-full rounded-full bg-[#0a0a0a] items-center justify-center text-3xl font-bold text-white absolute inset-[3px]" style={{ display: 'none' }}>
+              {profile.initials}
+            </div>
+          </div>
         </motion.div>
 
         {/* Name — blur-in with staggered reveal */}
@@ -206,10 +231,33 @@ export default function Hero() {
           initial={{ opacity: 0, filter: 'blur(6px)' }}
           animate={{ opacity: 1, filter: 'blur(0px)' }}
           transition={{ delay: 0.7, duration: 0.6 }}
-          className="flex items-center justify-center gap-2 text-zinc-600 text-sm mb-12"
+          className="flex items-center justify-center gap-2 text-zinc-600 text-sm mb-4"
         >
           <MapPin size={12} />
           <span>{profile.location}</span>
+        </motion.div>
+
+        {/* Trust badges */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8, duration: 0.5 }}
+          className="flex flex-wrap items-center justify-center gap-3 mb-10"
+        >
+          <div className="inline-flex items-center gap-1.5 rounded-full glass-raised px-3.5 py-1.5 text-[11px]">
+            <Star size={11} className="text-[#1dbf73] fill-[#1dbf73]" />
+            <span className="text-zinc-400">Fiverr Top Rated</span>
+            <span className="text-white font-semibold">5.0</span>
+          </div>
+          <div className="inline-flex items-center gap-1.5 rounded-full glass-raised px-3.5 py-1.5 text-[11px]">
+            <span className="text-red-500">&#9654;</span>
+            <span className="text-zinc-400">YouTube</span>
+            <span className="text-white font-semibold">2.6M</span>
+          </div>
+          <div className="inline-flex items-center gap-1.5 rounded-full glass-raised px-3.5 py-1.5 text-[11px]">
+            <span className="text-[#1dbf73]">&#10003;</span>
+            <span className="text-zinc-400">50+ Reviews</span>
+          </div>
         </motion.div>
 
         {/* Stats — floating cards with perspective */}
@@ -258,6 +306,17 @@ export default function Hero() {
             <span className="relative z-10 flex items-center gap-2">
               <Sparkles size={14} />
               View My Work
+            </span>
+          </a>
+          <a
+            href="/cv.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group rounded-full glass-raised px-8 py-3.5 text-sm font-medium text-zinc-300 hover:text-white hover:border-brand/30 transition-all duration-300"
+          >
+            <span className="flex items-center gap-2">
+              <FileText size={14} />
+              View CV
             </span>
           </a>
           <a

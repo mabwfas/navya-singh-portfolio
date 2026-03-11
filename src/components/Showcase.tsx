@@ -28,7 +28,7 @@ export default function Showcase() {
             </h2>
 
             <p className="text-zinc-500 text-sm md:text-base max-w-lg mx-auto mb-8 leading-relaxed">
-              From concept to production — pixel-perfect web experiences
+              From concept to production — pixel-perfect mobile experiences
               engineered for performance, delight, and scale.
             </p>
 
@@ -36,7 +36,7 @@ export default function Showcase() {
             <div className="flex items-center gap-6 md:gap-10">
               {[
                 { icon: Globe, label: '40+ Projects', color: '#6366f1' },
-                { icon: Code2, label: '6+ Years', color: '#a855f7' },
+                { icon: Code2, label: '5+ Years', color: '#a855f7' },
                 { icon: Layers, label: '2M+ Users', color: '#ec4899' },
               ].map((item) => (
                 <div key={item.label} className="flex items-center gap-2">
@@ -62,7 +62,7 @@ export default function Showcase() {
             <div className="flex-1 flex justify-center">
               <div className="flex items-center gap-2 px-4 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-[10px] text-zinc-500 font-mono">
                 <span className="text-green-400/60">https://</span>
-                vivekrajsingh.dev
+                shreyanshsingh.dev
               </div>
             </div>
           </div>

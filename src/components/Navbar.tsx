@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, FileText } from 'lucide-react';
 
 const links = [
   { label: 'About', href: '#about' },
@@ -53,7 +53,7 @@ export default function Navbar() {
       <div className="mx-auto max-w-6xl flex items-center justify-between px-6 py-4">
         {/* Logo */}
         <a href="#" className="relative group">
-          <span className="text-xl font-bold tracking-tight text-shimmer">VRS</span>
+          <span className="text-xl font-bold tracking-tight text-shimmer">SS</span>
           <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-brand group-hover:w-full transition-all duration-300" />
         </a>
 
@@ -83,6 +83,15 @@ export default function Navbar() {
             );
           })}
           <div className="w-[1px] h-5 bg-white/[0.06] mx-2" />
+          <a
+            href="/cv.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 rounded-full glass-raised px-4 py-2 text-sm font-medium text-zinc-300 hover:text-white hover:border-brand/30 transition-all duration-300 ml-1"
+          >
+            <FileText size={13} />
+            <span className="relative z-10">CV</span>
+          </a>
           <a
             href="#contact"
             className="rounded-full bg-brand px-5 py-2 text-sm font-medium text-white hover:bg-brand-light transition-all duration-300 glow-brand shine-sweep ml-1"
@@ -125,6 +134,16 @@ export default function Navbar() {
                 </motion.a>
               ))}
               <div className="h-[1px] bg-white/[0.04] my-2" />
+              <a
+                href="/cv.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileOpen(false)}
+                className="flex items-center justify-center gap-2 rounded-lg glass-raised px-5 py-3 text-sm font-medium text-zinc-300 text-center hover:text-white transition-colors mt-1"
+              >
+                <FileText size={14} />
+                View CV
+              </a>
               <a
                 href="#contact"
                 onClick={() => setMobileOpen(false)}

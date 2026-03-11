@@ -1,15 +1,14 @@
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { useRef, useState, useCallback } from 'react';
 import { projects } from '../data';
-import { ArrowUpRight, Download, Star, Zap, Shield, TrendingUp, Smartphone, Activity } from 'lucide-react';
+import { Star, Zap, Shield, TrendingUp, Smartphone, Activity } from 'lucide-react';
 
 const projectImages: Record<string, string> = {
-  ShopKart: '/projects/shopkart.jpeg',
-  DevBoard: '/projects/devboard.jpeg',
-  PortfolioForge: '/projects/portfolioforge.jpeg',
-  CloudNotes: '/projects/cloudnotes.jpeg',
-  AnalyticsHQ: '/projects/analyticshq.jpeg',
-  DesignKit: '/projects/designkit.jpeg',
+  NidhiPay: '/projects/nidhipay.jpg',
+  VitalSync: '/projects/vitalsync.jpg',
+  LiveKart: '/projects/livekart.jpg',
+  StyleBazaar: '/projects/stylebazaar.jpg',
+  DabbaRun: '/projects/dabbarun.jpg',
 };
 
 /* ── Corner squares — 21st.dev Dark Grid ── */
@@ -177,7 +176,7 @@ function FeaturedProjectCard({
   }, []);
 
   const imgSrc = projectImages[project.title];
-  const isFinance = project.title === 'ShopKart';
+  const isFinance = project.title === 'NidhiPay';
 
   return (
     <motion.div
@@ -382,34 +381,18 @@ function FeaturedProjectCard({
             ))}
           </div>
 
-          {/* Action row */}
-          <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/[0.04]">
-            <div className="flex items-center gap-3">
-              <div className="flex -space-x-1.5">
-                {[...Array(4)].map((_, i) => (
-                  <div
-                    key={i}
-                    className="w-5 h-5 rounded-full border-2 border-[#0c0c0c]"
-                    style={{
-                      background: `linear-gradient(135deg, ${project.color}${70 - i * 12}, ${project.color}${35 - i * 8})`,
-                    }}
-                  />
-                ))}
-              </div>
-              <span className="text-xs sm:text-[11px] text-zinc-600 font-mono">Team of 8</span>
-            </div>
-
-            <motion.div
-              className="w-9 h-9 rounded-xl flex items-center justify-center transition-all duration-300"
-              style={{
-                background: isHovered ? `${project.color}15` : 'rgba(255,255,255,0.03)',
-                border: `1px solid ${isHovered ? `${project.color}30` : 'rgba(255,255,255,0.05)'}`,
-                boxShadow: isHovered ? `0 0 20px ${project.color}10` : 'none',
-              }}
-              whileHover={{ scale: 1.1 }}
+          {/* Action row — role & client attribution */}
+          <div className="flex items-center gap-3 mt-auto pt-4 border-t border-white/[0.04]">
+            <div
+              className="w-7 h-7 rounded-full flex items-center justify-center text-[10px] font-bold text-white flex-shrink-0"
+              style={{ background: `linear-gradient(135deg, ${project.color}, ${project.color}90)` }}
             >
-              <ArrowUpRight size={15} style={{ color: isHovered ? project.color : 'rgb(113, 113, 122)' }} />
-            </motion.div>
+              SS
+            </div>
+            <div className="min-w-0">
+              <span className="text-xs sm:text-[11px] text-zinc-400 font-medium block leading-tight">{project.role}</span>
+              <span className="text-[10px] text-zinc-600 font-mono">Client: {project.client}</span>
+            </div>
           </div>
         </div>
       </div>
@@ -611,33 +594,18 @@ function ProjectCard({
           ))}
         </div>
 
-        {/* Action row */}
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2 text-xs sm:text-[11px] text-zinc-600">
-            <div className="flex -space-x-1">
-              {[...Array(3)].map((_, i) => (
-                <div
-                  key={i}
-                  className="w-4 h-4 rounded-full border border-[#0c0c0c]"
-                  style={{
-                    background: `linear-gradient(135deg, ${project.color}${60 - i * 15}, ${project.color}${30 - i * 10})`,
-                  }}
-                />
-              ))}
-            </div>
-            <span>Team project</span>
-          </div>
-
-          <motion.div
-            className="w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-300"
-            style={{
-              background: isHovered ? `${project.color}15` : 'rgba(255,255,255,0.03)',
-              border: `1px solid ${isHovered ? `${project.color}30` : 'rgba(255,255,255,0.05)'}`,
-            }}
-            whileHover={{ scale: 1.1 }}
+        {/* Action row — role & client attribution */}
+        <div className="flex items-center gap-2">
+          <div
+            className="w-6 h-6 rounded-full flex items-center justify-center text-[9px] font-bold text-white flex-shrink-0"
+            style={{ background: `linear-gradient(135deg, ${project.color}, ${project.color}90)` }}
           >
-            <ArrowUpRight size={14} style={{ color: isHovered ? project.color : 'rgb(113, 113, 122)' }} />
-          </motion.div>
+            SS
+          </div>
+          <div className="min-w-0">
+            <span className="text-[11px] sm:text-[10px] text-zinc-400 font-medium block leading-tight">{project.role}</span>
+            <span className="text-[9px] text-zinc-600 font-mono">Client: {project.client}</span>
+          </div>
         </div>
       </div>
     </motion.div>
@@ -682,7 +650,7 @@ export default function Projects() {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="text-4xl sm:text-5xl font-bold tracking-tight mb-4"
           >
-            Featured <span className="gradient-text">Projects</span>
+            Shreyansh's <span className="gradient-text">Projects</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, filter: 'blur(6px)' }}
@@ -690,7 +658,7 @@ export default function Projects() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-zinc-500 max-w-xl leading-relaxed"
           >
-            Production-grade web applications serving millions of users across India and beyond.
+            Production-grade mobile applications built by Shreyansh Singh — serving millions of users across India and beyond.
             Each project built with obsessive attention to performance, accessibility, and delight.
           </motion.p>
         </motion.div>

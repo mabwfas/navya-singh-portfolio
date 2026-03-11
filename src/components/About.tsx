@@ -77,7 +77,7 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="text-4xl sm:text-5xl font-bold tracking-tight mb-4"
           >
-            Crafting Web <span className="gradient-text">Experiences</span>
+            Crafting Mobile <span className="gradient-text">Experiences</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, filter: 'blur(6px)' }}
@@ -85,7 +85,7 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-zinc-500 max-w-xl leading-relaxed mb-14"
           >
-            6+ years of shipping web apps that millions rely on daily — from e-commerce to developer tools, SaaS to design systems.
+            5+ years of shipping mobile apps that millions rely on daily — from fintech to health-tech, e-commerce to live commerce.
           </motion.p>
         </motion.div>
 
