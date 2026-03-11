@@ -84,6 +84,13 @@ export default function Navbar() {
           })}
           <div className="w-[1px] h-5 bg-white/[0.06] mx-2" />
           <a
+            href="/portfolio/"
+            className="flex items-center gap-1.5 rounded-full glass-raised px-4 py-2 text-sm font-medium text-zinc-300 hover:text-white hover:border-brand/30 transition-all duration-300 ml-1"
+          >
+            <FileText size={13} />
+            <span className="relative z-10">Portfolio</span>
+          </a>
+          <a
             href="/cv.html"
             target="_blank"
             rel="noopener noreferrer"

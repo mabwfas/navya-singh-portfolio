@@ -9,6 +9,7 @@ import Process from './components/Process';
 import Skills from './components/Skills';
 import YouTube from './components/YouTube';
 import FiverrReviews from './components/FiverrReviews';
+import Pricing from './components/Pricing';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -26,6 +27,7 @@ export default function App() {
       <Skills />
       <YouTube />
       <FiverrReviews />
+      <Pricing />
       <Contact />
       <Footer />
     </div>

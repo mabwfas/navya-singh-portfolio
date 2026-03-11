@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Shreyansh Singh | Mobile App Developer</title>
+  <meta name="description" content="Detailed portfolio of Shreyansh Singh — 90+ apps shipped, 50M+ users served. Flutter, React Native, Swift, Kotlin." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #050505; --surface: #0a0a0a; --border: rgba(255,255,255,0.06);
+      --brand: #6366f1; --brand-light: #818cf8; --text: #e4e4e7; --muted: #71717a; --dim: #52525b;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: var(--brand-light); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .mono { font-family: 'JetBrains Mono', monospace; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* Header */
+    .header { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(16px); background: rgba(5,5,5,0.85); border-bottom: 1px solid var(--border); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
+    .logo { font-weight: 800; font-size: 18px; color: #fff; letter-spacing: -0.02em; }
+    .logo span { color: var(--brand); }
+    .nav-links { display: flex; gap: 24px; align-items: center; }
+    .nav-links a { color: var(--muted); font-size: 13px; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: #fff; text-decoration: none; }
+    .btn-hire { background: var(--brand); color: #fff; padding: 8px 20px; border-radius: 9999px; font-size: 13px; font-weight: 600; transition: background 0.2s; }
+    .btn-hire:hover { background: var(--brand-light); text-decoration: none; }
+
+    /* Hero */
+    .hero { padding: 80px 0 60px; text-align: center; }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 16px; }
+    .hero h1 span { background: linear-gradient(135deg, var(--brand), #a855f7, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero p { color: var(--muted); max-width: 600px; margin: 0 auto; font-size: 15px; }
+    .stats-row { display: flex; justify-content: center; gap: 32px; margin-top: 32px; flex-wrap: wrap; }
+    .stat { text-align: center; }
+    .stat-val { font-size: 28px; font-weight: 800; color: #fff; }
+    .stat-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--dim); margin-top: 2px; }
+
+    /* Section */
+    .section { padding: 60px 0; }
+    .section-title { font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--brand); font-weight: 600; margin-bottom: 8px; }
+    .section h2 { font-size: 28px; font-weight: 700; margin-bottom: 8px; color: #fff; }
+    .section-desc { color: var(--muted); font-size: 14px; margin-bottom: 32px; }
+
+    /* Project Cards */
+    .projects-grid { display: grid; gap: 24px; }
+    .project-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 32px; transition: border-color 0.3s, transform 0.3s; }
+    .project-card:hover { border-color: rgba(99,102,241,0.3); transform: translateY(-2px); }
+    .project-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 16px; gap: 16px; flex-wrap: wrap; }
+    .project-title { font-size: 22px; font-weight: 700; color: #fff; margin-bottom: 2px; }
+    .project-subtitle { font-size: 13px; color: var(--muted); }
+    .project-metric { background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.2); border-radius: 9999px; padding: 6px 14px; font-size: 12px; font-weight: 600; color: var(--brand-light); white-space: nowrap; }
+    .project-meta { display: flex; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
+    .project-meta-item { font-size: 12px; color: var(--dim); }
+    .project-meta-item strong { color: var(--muted); font-weight: 500; }
+    .project-desc { font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 20px; }
+    .tech-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+    .tech-tag { background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 6px; padding: 4px 10px; font-size: 11px; color: var(--dim); }
+
+    /* Pricing */
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .price-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 28px; position: relative; }
+    .price-card.popular { border-color: rgba(99,102,241,0.4); background: rgba(99,102,241,0.03); }
+    .price-badge { position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: var(--brand); color: #fff; font-size: 10px; font-weight: 600; padding: 3px 12px; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.1em; }
+    .price-name { font-size: 16px; font-weight: 600; color: #fff; margin-bottom: 4px; }
+    .price-amount { font-size: 32px; font-weight: 800; color: #fff; margin: 8px 0 4px; }
+    .price-period { font-size: 11px; color: var(--dim); margin-bottom: 12px; }
+    .price-desc { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+    .price-features { list-style: none; margin-bottom: 24px; }
+    .price-features li { font-size: 13px; color: var(--muted); padding: 5px 0; display: flex; align-items: flex-start; gap: 8px; }
+    .price-features li::before { content: '\2713'; color: var(--brand); font-weight: 600; flex-shrink: 0; margin-top: 1px; }
+    .price-cta { display: block; width: 100%; text-align: center; padding: 10px; border-radius: 10px; font-size: 13px; font-weight: 600; transition: all 0.2s; }
+    .price-cta.primary { background: var(--brand); color: #fff; }
+    .price-cta.primary:hover { background: var(--brand-light); text-decoration: none; }
+    .price-cta.secondary { background: rgba(255,255,255,0.04); border: 1px solid var(--border); color: var(--text); }
+    .price-cta.secondary:hover { border-color: rgba(99,102,241,0.3); text-decoration: none; }
+
+    /* Footer */
+    .footer { padding: 40px 0; border-top: 1px solid var(--border); text-align: center; }
+    .footer p { font-size: 12px; color: var(--dim); }
+
+    @media (max-width: 640px) {
+      .nav-links { gap: 12px; }
+      .project-header { flex-direction: column; }
+      .stats-row { gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo"><span>S</span>S</div>
+      <nav class="nav-links">
+        <a href="/">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#pricing">Pricing</a>
+        <a href="/cv.html">CV</a>
+        <a href="/#contact" class="btn-hire">Hire Me</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>Project <span>Portfolio</span></h1>
+      <p>A closer look at 5+ years of mobile app development — from fintech super-apps to AI-powered fashion platforms, each project engineered for scale.</p>
+      <div class="stats-row">
+        <div class="stat"><div class="stat-val">90+</div><div class="stat-label mono">Apps Shipped</div></div>
+        <div class="stat"><div class="stat-val">50M+</div><div class="stat-label mono">Users Served</div></div>
+        <div class="stat"><div class="stat-val">5.0</div><div class="stat-label mono">Fiverr Rating</div></div>
+        <div class="stat"><div class="stat-val">100%</div><div class="stat-label mono">5-Star Reviews</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-title mono">Featured Work</div>
+      <h2>Projects in Detail</h2>
+      <p class="section-desc">Each project built from scratch with production-grade architecture, comprehensive testing, and performance optimization.</p>
+
+      <div class="projects-grid">
+
+        <!-- NidhiPay -->
+        <div class="project-card">
+          <div class="project-header">
+            <div>
+              <div class="project-title">NidhiPay</div>
+              <div class="project-subtitle">AI-Powered UPI & Banking App</div>
+            </div>
+            <div class="project-metric">628K Downloads</div>
+          </div>
+          <div class="project-meta">
+            <div class="project-meta-item"><strong>Client:</strong> KisanCredit (YC W23)</div>
+            <div class="project-meta-item"><strong>Role:</strong> Sole Developer & Architect</div>
+          </div>
+          <p class="project-desc">Full-featured fintech super-app built for the Indian market with UPI payments, AI-driven expense categorization, and biometric security. Handles 800 Cr+ monthly transaction volume with 99.97% uptime. Features bill splitting, recurring payments, investment portfolio tracking, and a custom fraud detection engine that reduced chargebacks by 43%. Built the entire payment orchestration layer from scratch, integrating with NPCI, RBI-compliant KYC, and 12 major Indian banks. Rated 4.9 stars on Google Play with 600K+ organic downloads.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Flutter</span><span class="tech-tag">Dart</span><span class="tech-tag">Firebase</span><span class="tech-tag">Razorpay SDK</span><span class="tech-tag">ML Kit</span>
+          </div>
+        </div>
+
+        <!-- VitalSync -->
+        <div class="project-card">
+          <div class="project-header">
+            <div>
+              <div class="project-title">VitalSync</div>
+              <div class="project-subtitle">Cross-Platform Health & Fitness Tracker</div>
+            </div>
+            <div class="project-metric">1.52M Active Users</div>
+          </div>
+          <div class="project-meta">
+            <div class="project-meta-item"><strong>Client:</strong> HealthifyMe</div>
+            <div class="project-meta-item"><strong>Role:</strong> Lead React Native Developer</div>
+          </div>
+          <p class="project-desc">Comprehensive health and wellness platform that syncs with Apple HealthKit, Google Fit, and 15+ wearable devices including Fitbit, Garmin, and Samsung Galaxy Watch. Features AI-powered workout recommendations, meal planning with barcode scanning, sleep analysis, and mental wellness tracking. Custom charting engine renders real-time biometric data with 60fps animations. Supports offline mode with background sync for uninterrupted tracking.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">React Native</span><span class="tech-tag">HealthKit</span><span class="tech-tag">Google Fit</span><span class="tech-tag">Node.js</span><span class="tech-tag">MongoDB</span>
+          </div>
+        </div>
+
+        <!-- LiveKart -->
+        <div class="project-card">
+          <div class="project-header">
+            <div>
+              <div class="project-title">LiveKart</div>
+              <div class="project-subtitle">Live Commerce & Video Shopping Platform</div>
+            </div>
+            <div class="project-metric">50 Cr+ GMV</div>
+          </div>
+          <div class="project-meta">
+            <div class="project-meta-item"><strong>Client:</strong> Meesho</div>
+            <div class="project-meta-item"><strong>Role:</strong> Lead Flutter Developer</div>
+          </div>
+          <p class="project-desc">India's fastest-growing live commerce platform enabling sellers to broadcast live video shopping sessions with real-time purchasing. Features low-latency streaming under 300ms, in-stream checkout, AI-powered product recognition, and seller analytics dashboard. Built custom adaptive bitrate streaming engine optimized for Indian network conditions. Handles 50K+ concurrent viewers per stream with instant buy-now functionality.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Flutter</span><span class="tech-tag">WebRTC</span><span class="tech-tag">Agora SDK</span><span class="tech-tag">Firebase</span><span class="tech-tag">Stripe</span>
+          </div>
+        </div>
+
+        <!-- StyleBazaar -->
+        <div class="project-card">
+          <div class="project-header">
+            <div>
+              <div class="project-title">StyleBazaar</div>
+              <div class="project-subtitle">AI Fashion Discovery & Shopping App</div>
+            </div>
+            <div class="project-metric">340K Downloads</div>
+          </div>
+          <div class="project-meta">
+            <div class="project-meta-item"><strong>Client:</strong> Zarqa Retail Group (Dubai)</div>
+            <div class="project-meta-item"><strong>Role:</strong> Sole Developer</div>
+          </div>
+          <p class="project-desc">AI-powered fashion discovery app using computer vision to analyze user style preferences and recommend outfits. Features virtual try-on using ARCore, style profile generation, wardrobe management with outfit suggestions, and social sharing. Custom ML model trained on 500K+ Indian fashion images for culturally relevant recommendations. Integrated with 200+ D2C brands for seamless in-app purchasing.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Kotlin</span><span class="tech-tag">Jetpack Compose</span><span class="tech-tag">TensorFlow Lite</span><span class="tech-tag">Room DB</span><span class="tech-tag">Retrofit</span>
+          </div>
+        </div>
+
+        <!-- DabbaRun -->
+        <div class="project-card">
+          <div class="project-header">
+            <div>
+              <div class="project-title">DabbaRun</div>
+              <div class="project-subtitle">Hyperlocal Food Delivery Platform</div>
+            </div>
+            <div class="project-metric">89K Monthly Orders</div>
+          </div>
+          <div class="project-meta">
+            <div class="project-meta-item"><strong>Client:</strong> Personal Project</div>
+            <div class="project-meta-item"><strong>Role:</strong> Solo Developer & Architect</div>
+          </div>
+          <p class="project-desc">Hyperlocal food delivery platform connecting home chefs with customers in tier-2 and tier-3 Indian cities. Features real-time order tracking with live map, dynamic delivery routing algorithm reducing delivery time by 22%, subscription meal plans, and multi-language support in 8 Indian languages. Built custom geofencing engine for accurate delivery zone management.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Flutter</span><span class="tech-tag">Google Maps SDK</span><span class="tech-tag">Firebase</span><span class="tech-tag">Razorpay</span><span class="tech-tag">Node.js</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="section" style="border-top: 1px solid rgba(255,255,255,0.06);">
+    <div class="container">
+      <div class="section-title mono">Investment</div>
+      <h2>Pricing Plans</h2>
+      <p class="section-desc">Transparent pricing for every stage of your product. All plans include source code handover.</p>
+
+      <div class="pricing-grid">
+        <!-- Starter -->
+        <div class="price-card">
+          <div class="price-name">Starter</div>
+          <div class="price-amount">$1,500</div>
+          <div class="price-period mono">per project</div>
+          <p class="price-desc">Perfect for MVPs and proof-of-concept apps</p>
+          <ul class="price-features">
+            <li>Single platform (iOS or Android)</li>
+            <li>Up to 5 screens</li>
+            <li>Basic UI/UX design</li>
+            <li>Firebase backend setup</li>
+            <li>App Store / Play Store submission</li>
+            <li>30 days post-launch support</li>
+          </ul>
+          <a href="/#contact" class="price-cta secondary">Get Started</a>
+        </div>
+
+        <!-- Professional -->
+        <div class="price-card popular">
+          <div class="price-badge">Recommended</div>
+          <div class="price-name">Professional</div>
+          <div class="price-amount">$4,500</div>
+          <div class="price-period mono">per project</div>
+          <p class="price-desc">Full-featured cross-platform app for growing businesses</p>
+          <ul class="price-features">
+            <li>Cross-platform (iOS + Android)</li>
+            <li>Up to 15 screens</li>
+            <li>Custom UI/UX design in Figma</li>
+            <li>API integration & backend</li>
+            <li>Push notifications & analytics</li>
+            <li>Payment gateway integration</li>
+            <li>Admin dashboard</li>
+            <li>60 days post-launch support</li>
+          </ul>
+          <a href="/#contact" class="price-cta primary">Most Popular</a>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="price-card">
+          <div class="price-name">Enterprise</div>
+          <div class="price-amount">$12,000+</div>
+          <div class="price-period mono">custom scope</div>
+          <p class="price-desc">Complex, scalable apps for enterprise-grade needs</p>
+          <ul class="price-features">
+            <li>Cross-platform + Web app</li>
+            <li>Unlimited screens & features</li>
+            <li>Advanced architecture & CI/CD</li>
+            <li>Real-time features (chat, live)</li>
+            <li>AI/ML integration</li>
+            <li>Multi-language & multi-region</li>
+            <li>Performance optimization</li>
+            <li>Dedicated project manager</li>
+            <li>6 months support & maintenance</li>
+          </ul>
+          <a href="/#contact" class="price-cta secondary">Contact Me</a>
+        </div>
+      </div>
+      <p style="text-align:center;font-size:12px;color:var(--dim);margin-top:20px;">Custom quotes available for unique requirements. All prices in USD.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="text-align:center; padding: 60px 0;">
+    <div class="container">
+      <h2 style="font-size:28px;font-weight:700;color:#fff;margin-bottom:12px;">Ready to Build Something Amazing?</h2>
+      <p style="color:var(--muted);font-size:14px;margin-bottom:24px;">Let's turn your idea into a high-performance mobile app.</p>
+      <a href="/#contact" class="btn-hire" style="padding:12px 32px;font-size:15px;">Start Your Project</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Shreyansh Singh. All rights reserved. Designed with care in Lucknow.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

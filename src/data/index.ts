@@ -235,6 +235,62 @@ export const processSteps = [
   { step: 5, title: 'Launch', description: 'App store optimization & staged rollout', icon: 'Rocket' },
 ];
 
+export const pricingPlans = [
+  {
+    name: 'Starter',
+    price: '$1,500',
+    period: 'per project',
+    description: 'Perfect for MVPs and proof-of-concept apps',
+    features: [
+      'Single platform (iOS or Android)',
+      'Up to 5 screens',
+      'Basic UI/UX design',
+      'Firebase backend setup',
+      'App Store / Play Store submission',
+      '30 days post-launch support',
+    ],
+    highlighted: false,
+    cta: 'Get Started',
+  },
+  {
+    name: 'Professional',
+    price: '$4,500',
+    period: 'per project',
+    description: 'Full-featured cross-platform app for growing businesses',
+    features: [
+      'Cross-platform (iOS + Android)',
+      'Up to 15 screens',
+      'Custom UI/UX design in Figma',
+      'API integration & backend',
+      'Push notifications & analytics',
+      'Payment gateway integration',
+      'Admin dashboard',
+      '60 days post-launch support',
+    ],
+    highlighted: true,
+    cta: 'Most Popular',
+  },
+  {
+    name: 'Enterprise',
+    price: '$12,000+',
+    period: 'custom scope',
+    description: 'Complex, scalable apps for enterprise-grade needs',
+    features: [
+      'Cross-platform + Web app',
+      'Unlimited screens & features',
+      'Advanced architecture & CI/CD',
+      'Real-time features (chat, live)',
+      'AI/ML integration',
+      'Multi-language & multi-region',
+      'Performance optimization',
+      'Dedicated project manager',
+      '6 months support & maintenance',
+    ],
+    highlighted: false,
+    cta: 'Contact Me',
+  },
+];
+
 export const caseStudy = {
   project: 'NidhiPay',
   client: 'KisanCredit (YC W23)',
