@@ -66,7 +66,7 @@ export default function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
 
   return (
-    <section ref={containerRef} className="relative min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 overflow-hidden">
+    <section ref={containerRef} className="relative min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 pt-20 overflow-hidden">
       {/* Grid background */}
       <div className="absolute inset-0 grid-bg" />
 
