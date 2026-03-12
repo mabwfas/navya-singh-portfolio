@@ -196,6 +196,7 @@ function FeaturedProjectCard({
 
   const imgSrc = projectImages[project.title];
   const isFinance = project.title === 'NidhiPay';
+  const isHealth = project.title === 'VitalSync';
 
   return (
     <motion.div
@@ -376,15 +377,22 @@ function FeaturedProjectCard({
             {(isFinance
               ? [
                   { icon: Shield, label: 'Secure Payments' },
-                  { icon: Zap, label: 'AI Recommendations' },
+                  { icon: Zap, label: 'AI Categorization' },
                   { icon: Star, label: '4.9★ Rating' },
-                  { icon: TrendingUp, label: '₹200 Cr+ GMV' },
+                  { icon: TrendingUp, label: '628K Downloads' },
+                ]
+              : isHealth
+              ? [
+                  { icon: Activity, label: '15+ Wearables' },
+                  { icon: Smartphone, label: 'iOS & Android' },
+                  { icon: Star, label: '4.8★ Rating' },
+                  { icon: TrendingUp, label: '1.52M Users' },
                 ]
               : [
                   { icon: Activity, label: 'Real-time Sync' },
-                  { icon: Smartphone, label: 'Responsive' },
+                  { icon: Smartphone, label: 'Cross-Platform' },
                   { icon: Star, label: 'AI-Powered' },
-                  { icon: TrendingUp, label: '50K+ Users' },
+                  { icon: TrendingUp, label: project.metric },
                 ]
             ).map((feat, fi) => (
               <motion.div
@@ -451,7 +459,7 @@ function FeaturedProjectCard({
             <FloatingWidget
               icon={TrendingUp}
               label="Monthly GMV"
-              value="₹200 Cr+"
+              value="₹800 Cr+"
               color={project.color}
               delay={0.8}
               position="top-5 right-5 md:top-auto md:bottom-20 md:left-[38%]"
@@ -463,7 +471,7 @@ function FeaturedProjectCard({
             <FloatingWidget
               icon={Activity}
               label="Active Users"
-              value="50K+"
+              value={isHealth ? '1.52M' : project.metric}
               color={project.color}
               delay={0.8}
               position="top-5 left-5 md:top-auto md:bottom-20 md:right-[38%]"

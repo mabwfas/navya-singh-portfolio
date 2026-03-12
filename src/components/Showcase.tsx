@@ -28,7 +28,7 @@ export default function Showcase() {
             </h2>
 
             <p className="text-zinc-500 text-sm md:text-base max-w-lg mx-auto mb-8 leading-relaxed">
-              From concept to production — pixel-perfect mobile experiences
+              From concept to production — pixel-perfect mobile apps and Shopify stores
               engineered for performance, delight, and scale.
             </p>
 
@@ -37,7 +37,7 @@ export default function Showcase() {
               {[
                 { icon: Globe, label: '40+ Projects', color: '#6366f1' },
                 { icon: Code2, label: '5+ Years', color: '#a855f7' },
-                { icon: Layers, label: '2M+ Users', color: '#ec4899' },
+                { icon: Layers, label: '3M+ Users', color: '#ec4899' },
               ].map((item) => (
                 <div key={item.label} className="flex items-center gap-2">
                   <item.icon size={14} style={{ color: item.color }} />
@@ -62,7 +62,7 @@ export default function Showcase() {
             <div className="flex-1 flex justify-center">
               <div className="flex items-center gap-2 px-4 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-[10px] text-zinc-500 font-mono">
                 <span className="text-green-400/60">https://</span>
-                shreyanshsingh.dev
+                portfolio.shreyansh.dev
               </div>
             </div>
           </div>
@@ -97,7 +97,7 @@ export default function Showcase() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3">
                 {[
                   { label: 'Projects', value: '40+', change: '+8 this year', color: '#6366f1' },
-                  { label: 'Active Users', value: '2M+', change: '+34.2%', color: '#10b981' },
+                  { label: 'Active Users', value: '3M+', change: '+34.2%', color: '#10b981' },
                   { label: 'GMV Processed', value: '₹500Cr+', change: '+45.1%', color: '#f59e0b' },
                   { label: 'Client Rating', value: '5.0★', change: '100%', color: '#ec4899' },
                 ].map((metric) => (

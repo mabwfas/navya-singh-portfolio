@@ -17,7 +17,7 @@ function TimelineItem({ item, index }: { item: (typeof experience)[0]; index: nu
   const companyColors: Record<string, string> = {
     'Self-Employed': '#10b981',
     Razorpay: '#6366f1',
-    Freshworks: '#f59e0b',
+    'Flipkart (Walmart Inc.)': '#f59e0b',
   };
 
   const color = companyColors[item.company] || '#6366f1';
@@ -182,8 +182,8 @@ export default function Experience() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-zinc-500 max-w-lg leading-relaxed"
           >
-            From Freshworks' enterprise CRM to Razorpay's payment dashboard — 6+ years of
-            shipping at India's most ambitious tech companies.
+            From Paytm's UPI payments to Flipkart's mobile checkout — 5+ years of
+            shipping apps and stores at India's most ambitious tech companies.
           </motion.p>
         </motion.div>
 

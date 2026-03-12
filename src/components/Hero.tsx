@@ -128,7 +128,7 @@ export default function Hero() {
         >
           <Globe size={13} className="text-brand" />
           <span className="text-xs sm:text-[11px] text-zinc-400 font-mono tracking-[0.2em] uppercase">
-            Mobile App Architect
+            App & Shopify Developer
           </span>
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />

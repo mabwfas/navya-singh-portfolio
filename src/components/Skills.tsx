@@ -157,8 +157,8 @@ export default function Skills() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-zinc-500 max-w-lg leading-relaxed"
           >
-            Mastery across the full web development spectrum — from pixel-perfect frontends to
-            scalable backends and cloud infrastructure.
+            Mastery across mobile apps, Shopify stores, and full-stack development — from
+            pixel-perfect frontends to scalable backends and cloud infrastructure.
           </motion.p>
         </motion.div>
 

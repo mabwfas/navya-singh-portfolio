@@ -1,9 +1,9 @@
 export const profile = {
   name: 'Shreyansh Singh',
   initials: 'SS',
-  title: 'Senior Mobile App Developer & Cross-Platform Architect',
-  tagline: 'Crafting apps that users love — from concept to App Store',
-  bio: `Elite mobile developer with 5+ years building high-performance iOS, Android, and cross-platform applications for India's top tech companies and global startups. Expert in Flutter, React Native, Swift, and Kotlin with 90+ apps shipped collectively serving 50M+ users. Built payment, e-commerce, and fintech apps processing ₹15,000 Cr+ in transactions.`,
+  title: 'Senior Mobile App & Shopify Developer',
+  tagline: 'Building mobile apps & Shopify stores that users love',
+  bio: `Full-stack developer with 5+ years building high-performance mobile apps (iOS, Android, cross-platform) and custom Shopify stores for India's top tech companies and global clients. Expert in Flutter, React Native, Swift, Kotlin, and Shopify/Liquid with 90+ projects shipped collectively serving 50M+ users. Built payment apps, e-commerce stores, and fintech platforms processing ₹15,000 Cr+ in transactions.`,
   email: 'realshreyanshsingh@gmail.com',
   phone: '+91 88277 41992',
   location: 'Lucknow, UP, India',
@@ -11,7 +11,7 @@ export const profile = {
 
 export const stats = [
   { value: '5+', label: 'Years Exp.' },
-  { value: '90+', label: 'Apps Shipped' },
+  { value: '90+', label: 'Projects Shipped' },
   { value: '50M+', label: 'Users Served' },
   { value: '100%', label: '5-Star Rating' },
 ];
@@ -19,29 +19,30 @@ export const stats = [
 export const skills = [
   { name: 'Flutter / Dart', level: 98, category: 'frontend' },
   { name: 'React Native / JS', level: 97, category: 'frontend' },
-  { name: 'Swift / SwiftUI', level: 96, category: 'frontend' },
+  { name: 'Shopify / Liquid', level: 96, category: 'frontend' },
+  { name: 'Swift / SwiftUI', level: 95, category: 'frontend' },
   { name: 'Kotlin / Jetpack', level: 95, category: 'backend' },
   { name: 'App Architecture', level: 97, category: 'backend' },
 ];
 
 export const techStack = {
-  frontend: ['Flutter', 'React Native', 'Swift', 'Kotlin', 'SwiftUI', 'Jetpack Compose'],
+  frontend: ['Flutter', 'React Native', 'Swift', 'Kotlin', 'Shopify', 'Liquid'],
   backend: ['Firebase', 'Node.js', 'Supabase', 'AWS Amplify', 'GraphQL'],
-  tools: ['Fastlane', 'Codemagic', 'Figma', 'Xcode', 'Android Studio', 'RevenueCat'],
+  tools: ['Fastlane', 'Codemagic', 'Figma', 'Xcode', 'Android Studio', 'Shopify CLI'],
 };
 
 export const experience = [
   {
-    role: 'Freelance Mobile App Developer & Architect',
+    role: 'Freelance Mobile App & Shopify Developer',
     company: 'Self-Employed',
     type: 'Freelance / Contract',
     location: 'Remote, India',
     period: 'Jan 2024 — Present',
     highlights: [
-      'Deliver end-to-end mobile development for 12+ clients across fintech, health, and e-commerce verticals',
+      'Deliver end-to-end mobile apps and custom Shopify stores for 12+ clients across fintech, health, and e-commerce',
       'Architected and shipped 8 production apps with Flutter and React Native for iOS & Android',
-      'Built cross-platform SDKs adopted by 3 enterprise clients for payment integration',
-      'Provide mobile architecture consulting for startup engineering teams of 5-15 engineers',
+      'Built 15+ custom Shopify stores with bespoke themes, Liquid templates, and third-party integrations',
+      'Provide mobile architecture and e-commerce consulting for startup teams of 5-15 engineers',
     ],
   },
   {
@@ -180,7 +181,7 @@ export const certifications = [
 
 export const testimonials = [
   {
-    quote: "Shreyansh and the DMH team did an outstanding job setting up my Shopify store! Communication was great throughout the entire process.",
+    quote: "Shreyansh delivered an outstanding Shopify store for us! Communication was great throughout the entire process.",
     author: 'simonejenkin200',
     role: 'Fiverr Client · United States',
   },
@@ -190,7 +191,7 @@ export const testimonials = [
     role: 'Fiverr Client · United States',
   },
   {
-    quote: "I had a great experience working with Shreyansh on the development and restructuring of my store. Would definitely recommend!",
+    quote: "I had a great experience working with Shreyansh on the development and restructuring of my Shopify store. Would definitely recommend!",
     author: 'ydeko4471',
     role: 'Fiverr Client · Bulgaria',
   },
@@ -209,13 +210,13 @@ export const fiverrStats = {
 };
 
 export const fiverrReviews = [
-  { username: 'simonejenkin200', country: 'US', flag: '🇺🇸', rating: 5, quote: 'Shreyansh and the DMH team did an outstanding job setting up my Shopify store! Communication was great throughout the entire process.', price: '$400–600', duration: '10 days' },
+  { username: 'simonejenkin200', country: 'US', flag: '🇺🇸', rating: 5, quote: 'Shreyansh delivered an outstanding Shopify store for us! Communication was great throughout the entire process.', price: '$400–600', duration: '10 days' },
   { username: 'ydeko4471', country: 'BG', flag: '🇧🇬', rating: 5, quote: 'I had a great experience working with Shreyansh on the development and restructuring of my Shopify store. Would definitely recommend!', price: '$2,000–3,000', duration: '3 weeks' },
   { username: 'kidboss', country: 'US', flag: '🇺🇸', rating: 5, quote: 'Very professional and gives attention to details. The final work exceeded my expectations!', price: '$600–800', duration: '2 weeks' },
-  { username: 'onpointproduct', country: 'US', flag: '🇺🇸', rating: 5, quote: 'I PICKED THE RIGHT WEB DESIGNER! Highly recommended for anyone looking for quality work.', price: '$1,500–2,000', duration: '6 weeks' },
+  { username: 'onpointproduct', country: 'US', flag: '🇺🇸', rating: 5, quote: 'I PICKED THE RIGHT DEVELOPER! Highly recommended for anyone looking for quality Shopify and app work.', price: '$1,500–2,000', duration: '6 weeks' },
   { username: 'martinmt19', country: 'PL', flag: '🇵🇱', rating: 5, quote: 'Fully functional Shopify store with mobile-first design. Repeat client — always delivers!', price: '$800–1,000', duration: '3 weeks', repeat: true },
   { username: 'anandhprasadsar', country: 'SG', flag: '🇸🇬', rating: 5, quote: 'Truly one of the best projects delivered. Exceeded expectations on every front.', price: '$600–800', duration: '2 weeks' },
-  { username: 'nander016', country: 'US', flag: '🇺🇸', rating: 5, quote: 'Excellent to work with Shreyansh and his team. Great communication and results.', price: '$400–600', duration: '10 days' },
+  { username: 'nander016', country: 'US', flag: '🇺🇸', rating: 5, quote: 'Excellent to work with Shreyansh. Great communication and results.', price: '$400–600', duration: '10 days' },
   { username: 'ginok708', country: 'US', flag: '🇺🇸', rating: 5, quote: 'Built out everything we were looking to accomplish. Great communication and delivered on time!', price: '$800–1,000', duration: '9 days' },
 ];
 
@@ -230,9 +231,9 @@ export const youtube = {
 export const processSteps = [
   { step: 1, title: 'Discovery', description: 'Requirements, user research & competitive analysis', icon: 'Search' },
   { step: 2, title: 'Design', description: 'Wireframes, prototypes & UI/UX design', icon: 'Palette' },
-  { step: 3, title: 'Development', description: 'Cross-platform development with CI/CD', icon: 'Code2' },
-  { step: 4, title: 'QA & Testing', description: 'Automated testing & device coverage', icon: 'TestTube2' },
-  { step: 5, title: 'Launch', description: 'App store optimization & staged rollout', icon: 'Rocket' },
+  { step: 3, title: 'Development', description: 'App & store development with CI/CD', icon: 'Code2' },
+  { step: 4, title: 'QA & Testing', description: 'Automated testing & cross-device coverage', icon: 'TestTube2' },
+  { step: 5, title: 'Launch', description: 'App Store, Play Store & Shopify go-live', icon: 'Rocket' },
 ];
 
 export const pricingPlans = [
@@ -268,7 +269,7 @@ export const pricingPlans = [
       '60 days post-launch support',
     ],
     highlighted: true,
-    cta: 'Most Popular',
+    cta: 'Get Started',
   },
   {
     name: 'Enterprise',
