@@ -1,0 +1,228 @@
+{
+  "nicheId": "dev",
+  "nicheLabel": "Mobile App & Shopify Developer",
+  "title": "Senior Mobile App & Shopify Developer",
+  "tagline": "Building mobile apps & Shopify stores that users love",
+  "badge": "App & Shopify Developer",
+  "bio": "Full-stack developer with 5+ years building high-performance mobile apps (iOS, Android, cross-platform) and custom Shopify stores for India's top tech companies and global clients. Expert in Flutter, React Native, Swift, Kotlin, and Shopify/Liquid with 90+ projects shipped collectively serving 50M+ users. Built payment apps, e-commerce stores, and fintech platforms processing \u20b915,000 Cr+ in transactions.",
+  "stats": [
+    { "value": "5+", "label": "Years Exp." },
+    { "value": "90+", "label": "Projects Shipped" },
+    { "value": "50M+", "label": "Users Served" },
+    { "value": "100%", "label": "5-Star Rating" }
+  ],
+  "skills": [
+    { "name": "Flutter / Dart", "level": 98, "category": "frontend" },
+    { "name": "React Native / JS", "level": 97, "category": "frontend" },
+    { "name": "Shopify / Liquid", "level": 96, "category": "frontend" },
+    { "name": "Swift / SwiftUI", "level": 95, "category": "frontend" },
+    { "name": "Kotlin / Jetpack", "level": 95, "category": "backend" },
+    { "name": "App Architecture", "level": 97, "category": "backend" }
+  ],
+  "techStack": {
+    "frontend": ["Flutter", "React Native", "Swift", "Kotlin", "Shopify", "Liquid"],
+    "backend": ["Firebase", "Node.js", "Supabase", "AWS Amplify", "GraphQL"],
+    "tools": ["Fastlane", "Codemagic", "Figma", "Xcode", "Android Studio", "Shopify CLI"]
+  },
+  "experience": [
+    {
+      "role": "Freelance Mobile App & Shopify Developer",
+      "company": "Self-Employed",
+      "type": "Freelance / Contract",
+      "location": "Remote, India",
+      "period": "Jan 2024 \u2014 Present",
+      "highlights": [
+        "Deliver end-to-end mobile apps and custom Shopify stores for 12+ clients across fintech, health, and e-commerce",
+        "Architected and shipped 8 production apps with Flutter and React Native for iOS & Android",
+        "Built 15+ custom Shopify stores with bespoke themes, Liquid templates, and third-party integrations",
+        "Provide mobile architecture and e-commerce consulting for startup teams of 5-15 engineers"
+      ]
+    },
+    {
+      "role": "Lead Mobile App Developer",
+      "company": "Flipkart (Walmart Inc.)",
+      "type": "Full-time",
+      "location": "Bengaluru, India",
+      "period": "Apr 2022 \u2014 Dec 2023",
+      "highlights": [
+        "Led the mobile checkout redesign increasing conversion rate by 18% across Flipkart's 200M+ user base",
+        "Architected offline-first cart sync engine reducing order failures by 35% in low-connectivity zones",
+        "Built Flutter-based seller app used by 500K+ merchants for real-time inventory management",
+        "Mentored team of 6 mobile developers and established code review standards across mobile org"
+      ]
+    },
+    {
+      "role": "Senior Mobile App Developer",
+      "company": "Razorpay",
+      "type": "Full-time",
+      "location": "Bengaluru, India",
+      "period": "Sep 2020 \u2014 Mar 2022",
+      "highlights": [
+        "Implemented UPI deep-link integration, biometric auth, and real-time settlement tracking",
+        "Reduced app ANR rate by 76% through systematic memory leak detection",
+        "Led mobile SDK development powering payment flows in 50,000+ partner apps",
+        "Built React Native merchant dashboard app with real-time transaction analytics"
+      ]
+    },
+    {
+      "role": "Junior Mobile App Developer",
+      "company": "Paytm (One97 Communications)",
+      "type": "Full-time",
+      "location": "Noida, India",
+      "period": "Aug 2019 \u2014 Aug 2020",
+      "highlights": [
+        "Core team member during Paytm's hypergrowth phase \u2014 built features serving 100M+ users",
+        "Developed QR code scanner and merchant payment flow processing 5M+ daily UPI transactions",
+        "Built the Paytm Postpaid module generating \u20b9200 Cr+ in monthly disbursals",
+        "Optimized app for 2G/3G networks and low-RAM devices (1GB)"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "NidhiPay",
+      "subtitle": "AI-Powered UPI & Banking App",
+      "client": "KisanCredit (YC W23)",
+      "role": "Sole Developer & Architect",
+      "tech": ["Flutter", "Dart", "Firebase", "Razorpay SDK", "ML Kit"],
+      "description": "Full-featured fintech super-app built for the Indian market with UPI payments, AI-driven expense categorization, and biometric security. Handles \u20b9800 Cr+ monthly transaction volume with 99.97% uptime.",
+      "metric": "628K Downloads",
+      "color": "#6366f1",
+      "span": "col-span-2 row-span-2"
+    },
+    {
+      "title": "VitalSync",
+      "subtitle": "Cross-Platform Health & Fitness Tracker",
+      "client": "HealthifyMe",
+      "role": "Lead React Native Developer",
+      "tech": ["React Native", "HealthKit", "Google Fit", "Node.js", "MongoDB"],
+      "description": "Comprehensive health and wellness platform that syncs with Apple HealthKit, Google Fit, and 15+ wearable devices.",
+      "metric": "1.52M Active Users",
+      "color": "#10b981",
+      "span": "col-span-2 row-span-1"
+    },
+    {
+      "title": "LiveKart",
+      "subtitle": "Live Commerce & Video Shopping Platform",
+      "client": "Meesho",
+      "role": "Lead Flutter Developer",
+      "tech": ["Flutter", "WebRTC", "Agora SDK", "Firebase", "Stripe"],
+      "description": "India's fastest-growing live commerce platform enabling sellers to broadcast live video shopping sessions with real-time purchasing.",
+      "metric": "\u20b950 Cr+ GMV",
+      "color": "#f59e0b",
+      "span": "col-span-2 row-span-1"
+    },
+    {
+      "title": "StyleBazaar",
+      "subtitle": "AI Fashion Discovery & Shopping App",
+      "client": "Zarqa Retail Group (Dubai)",
+      "role": "Sole Developer",
+      "tech": ["Kotlin", "Jetpack Compose", "TensorFlow Lite", "Room DB", "Retrofit"],
+      "description": "AI-powered fashion discovery app using computer vision to analyze user style preferences and recommend outfits.",
+      "metric": "340K Downloads",
+      "color": "#ec4899",
+      "span": "col-span-2 row-span-1"
+    },
+    {
+      "title": "DabbaRun",
+      "subtitle": "Hyperlocal Food Delivery Platform",
+      "client": "Personal Project",
+      "role": "Solo Developer & Architect",
+      "tech": ["Flutter", "Google Maps SDK", "Firebase", "Razorpay", "Node.js"],
+      "description": "Hyperlocal food delivery platform connecting home chefs with customers in tier-2 and tier-3 Indian cities.",
+      "metric": "89K Monthly Orders",
+      "color": "#8b5cf6",
+      "span": "col-span-2 row-span-1"
+    }
+  ],
+  "testimonials": [
+    { "quote": "Shreyansh delivered an outstanding Shopify store for us! Communication was great throughout the entire process.", "author": "simonejenkin200", "role": "Fiverr Client \u00b7 United States" },
+    { "quote": "Very professional and gives attention to details. The final work exceeded my expectations!", "author": "kidboss", "role": "Fiverr Client \u00b7 United States" },
+    { "quote": "I had a great experience working with Shreyansh on the development and restructuring of my Shopify store. Would definitely recommend!", "author": "ydeko4471", "role": "Fiverr Client \u00b7 Bulgaria" },
+    { "quote": "Built out everything we were looking to accomplish. Great communication and delivered on time!", "author": "ginok708", "role": "Fiverr Client \u00b7 United States" }
+  ],
+  "fiverrReviews": [
+    { "username": "simonejenkin200", "country": "US", "flag": "\ud83c\uddfa\ud83c\uddf8", "rating": 5, "quote": "Shreyansh delivered an outstanding Shopify store for us! Communication was great throughout the entire process.", "price": "$400\u2013600", "duration": "10 days" },
+    { "username": "ydeko4471", "country": "BG", "flag": "\ud83c\udde7\ud83c\uddec", "rating": 5, "quote": "I had a great experience working with Shreyansh on the development and restructuring of my Shopify store. Would definitely recommend!", "price": "$2,000\u20133,000", "duration": "3 weeks" },
+    { "username": "kidboss", "country": "US", "flag": "\ud83c\uddfa\ud83c\uddf8", "rating": 5, "quote": "Very professional and gives attention to details. The final work exceeded my expectations!", "price": "$600\u2013800", "duration": "2 weeks" },
+    { "username": "onpointproduct", "country": "US", "flag": "\ud83c\uddfa\ud83c\uddf8", "rating": 5, "quote": "I PICKED THE RIGHT DEVELOPER! Highly recommended for anyone looking for quality Shopify and app work.", "price": "$1,500\u20132,000", "duration": "6 weeks" },
+    { "username": "martinmt19", "country": "PL", "flag": "\ud83c\uddf5\ud83c\uddf1", "rating": 5, "quote": "Fully functional Shopify store with mobile-first design. Repeat client \u2014 always delivers!", "price": "$800\u20131,000", "duration": "3 weeks", "repeat": true },
+    { "username": "anandhprasadsar", "country": "SG", "flag": "\ud83c\uddf8\ud83c\uddec", "rating": 5, "quote": "Truly one of the best projects delivered. Exceeded expectations on every front.", "price": "$600\u2013800", "duration": "2 weeks" },
+    { "username": "nander016", "country": "US", "flag": "\ud83c\uddfa\ud83c\uddf8", "rating": 5, "quote": "Excellent to work with Shreyansh. Great communication and results.", "price": "$400\u2013600", "duration": "10 days" },
+    { "username": "ginok708", "country": "US", "flag": "\ud83c\uddfa\ud83c\uddf8", "rating": 5, "quote": "Built out everything we were looking to accomplish. Great communication and delivered on time!", "price": "$800\u20131,000", "duration": "9 days" }
+  ],
+  "fiverrStats": {
+    "rating": "5.0",
+    "reviews": "50+",
+    "responseTime": "1 hour",
+    "level": "Top Rated"
+  },
+  "awards": [
+    { "title": "Google Play App of the Day", "detail": "NidhiPay featured by Google Play India for 3 consecutive weeks (2024)" },
+    { "title": "Flipkart Tech Excellence Award", "detail": "For mobile checkout redesign increasing conversion by 18%" },
+    { "title": "Smart India Hackathon Winner", "detail": "Built accessible healthcare app for rural India \u2014 national finalist (2018)" },
+    { "title": "React Native EU Conference Speaker", "detail": "\"Offline-First Architecture for Emerging Markets\" \u2014 Wroclaw (2023)" }
+  ],
+  "youtube": {
+    "channel": "Digital Marketing Heroes",
+    "handle": "@DigitalMarketingHeroes",
+    "subscribers": "2.6M",
+    "videos": "509+",
+    "url": "https://www.youtube.com/@DigitalMarketingHeroes"
+  },
+  "processSteps": [
+    { "step": 1, "title": "Discovery", "description": "Requirements, user research & competitive analysis", "icon": "Search" },
+    { "step": 2, "title": "Design", "description": "Wireframes, prototypes & UI/UX design", "icon": "Palette" },
+    { "step": 3, "title": "Development", "description": "App & store development with CI/CD", "icon": "Code2" },
+    { "step": 4, "title": "QA & Testing", "description": "Automated testing & cross-device coverage", "icon": "TestTube2" },
+    { "step": 5, "title": "Launch", "description": "App Store, Play Store & Shopify go-live", "icon": "Rocket" }
+  ],
+  "pricingPlans": [
+    {
+      "name": "Starter",
+      "price": "$1,500",
+      "period": "per project",
+      "description": "Perfect for MVPs and proof-of-concept apps",
+      "features": ["Single platform (iOS or Android)", "Up to 5 screens", "Basic UI/UX design", "Firebase backend setup", "App Store / Play Store submission", "30 days post-launch support"],
+      "highlighted": false,
+      "cta": "Get Started"
+    },
+    {
+      "name": "Professional",
+      "price": "$4,500",
+      "period": "per project",
+      "description": "Full-featured cross-platform app for growing businesses",
+      "features": ["Cross-platform (iOS + Android)", "Up to 15 screens", "Custom UI/UX design in Figma", "API integration & backend", "Push notifications & analytics", "Payment gateway integration", "Admin dashboard", "60 days post-launch support"],
+      "highlighted": true,
+      "cta": "Get Started"
+    },
+    {
+      "name": "Enterprise",
+      "price": "$12,000+",
+      "period": "custom scope",
+      "description": "Complex, scalable apps for enterprise-grade needs",
+      "features": ["Cross-platform + Web app", "Unlimited screens & features", "Advanced architecture & CI/CD", "Real-time features (chat, live)", "AI/ML integration", "Multi-language & multi-region", "Performance optimization", "Dedicated project manager", "6 months support & maintenance"],
+      "highlighted": false,
+      "cta": "Contact Me"
+    }
+  ],
+  "caseStudy": {
+    "project": "NidhiPay",
+    "client": "KisanCredit (YC W23)",
+    "role": "Sole Developer & Architect",
+    "problem": "Rural Indian farmers needed a reliable UPI payment app that worked on low-end devices with spotty 2G/3G connectivity.",
+    "solution": "Built an offline-first Flutter fintech super-app with custom payment orchestration, AI expense categorization, and biometric security.",
+    "challenges": [
+      "Optimized for devices with 1GB RAM and Android 5.0+",
+      "Built custom offline transaction queue with conflict resolution",
+      "Achieved 99.97% uptime with failover across 3 payment gateways",
+      "Reduced app size to 12MB for low-storage devices"
+    ],
+    "results": [
+      { "label": "Downloads", "value": "628K" },
+      { "label": "Uptime", "value": "99.97%" },
+      { "label": "Rating", "value": "4.9\u2605" },
+      { "label": "Chargebacks", "value": "-43%" }
+    ]
+  }
+}

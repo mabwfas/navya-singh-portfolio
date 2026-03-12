@@ -1,0 +1,40 @@
+{
+  "name": "Shreyansh Singh",
+  "initials": "SS",
+  "email": "realshreyanshsingh@gmail.com",
+  "phone": "+91 88277 41992",
+  "location": "Lucknow, UP, India",
+  "photo": "shreyansh.jpg",
+  "links": {
+    "github": "https://github.com/mabwfas",
+    "linkedin": "https://linkedin.com/in/shreyanshsingh",
+    "fiverr": "https://www.fiverr.com/shreyanshsingh",
+    "youtube": "https://www.youtube.com/@DigitalMarketingHeroes"
+  },
+  "education": [
+    {
+      "degree": "B.Tech Computer Science & Engineering",
+      "school": "Jaypee University of Engineering and Technology (JUET), Guna",
+      "year": "2019",
+      "details": "Smart India Hackathon Winner | Google Summer of Code (2x) | CGPA: 9.2/10"
+    },
+    {
+      "degree": "Senior Secondary (XII) — Science",
+      "school": "City Montessori School (CMS), Lucknow",
+      "year": "2015",
+      "details": "ICSE Board | Physics, Chemistry, Mathematics & Computer Science"
+    },
+    {
+      "degree": "Secondary (X)",
+      "school": "City Montessori School (CMS), Lucknow",
+      "year": "2013",
+      "details": "ICSE Board | School topper in Computer Science"
+    }
+  ],
+  "certifications": [
+    "Google Associate Android Developer — 2023",
+    "AWS Certified Solutions Architect — Associate, 2022",
+    "Meta React Native Specialization — Coursera, 2021",
+    "Apple Certified iOS Developer, 2020"
+  ]
+}
