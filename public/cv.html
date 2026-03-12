@@ -9,72 +9,92 @@
 body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f0f2f5;color:#1a1a2e;line-height:1.6;-webkit-font-smoothing:antialiased}
 .cv-page{display:grid;grid-template-columns:260px 1fr;max-width:1000px;margin:24px auto;background:#fff;box-shadow:0 4px 24px rgba(0,0,0,.12);border-radius:8px;overflow:hidden;min-height:100vh}
 @media print{
-@page{size:A4;margin:0}
+@page{size:A4;margin:6mm 0 6mm 0}
 *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;color-adjust:exact!important}
-body{background:#fff;margin:0;padding:0}
-.cv-page{margin:0;box-shadow:none;border-radius:0;min-height:auto;max-width:100%;display:grid!important;grid-template-columns:240px 1fr!important;overflow:visible}
+body{background:#fff;margin:0;padding:0;font-size:9px}
+.cv-page{margin:0;box-shadow:none;border-radius:0;min-height:auto;max-width:100%;display:grid!important;grid-template-columns:190px 1fr!important;overflow:visible}
 .cv-toolbar{display:none!important}
-.cv-sidebar{background:linear-gradient(180deg,#0f1629 0%,#162040 100%)!important;padding:20px 16px;font-size:12px}
-.cv-sidebar h2{margin:16px 0 8px;font-size:11px}
-.cv-avatar{width:70px;height:70px;font-size:26px;margin-bottom:12px}
-.cv-sb-item{margin:4px 0}
-.cv-sb-lbl{font-size:10px}
-.cv-sb-track{height:4px}
-.cv-tag{font-size:9px;padding:1px 6px}
-.cv-tag-group{margin:5px 0}
-.cv-tag-group h3{font-size:9px;margin-bottom:3px}
-.cv-tags{gap:3px}
-.cv-contact li{font-size:11px;margin:4px 0}
-.cv-lang-item{font-size:11px}
-.cv-cert{font-size:10px;margin:4px 0}
-.cv-cert-year{font-size:9px}
-.cv-gallery{grid-template-columns:repeat(3,1fr);gap:4px}
-.cv-gallery-item{padding:5px 3px}
-.cv-gallery-item span{font-size:18px!important}
-.cv-gallery-label{font-size:8px}
-.cv-main{padding:20px 24px}
-.cv-header h1{font-size:24px}
-.cv-title{font-size:13px;margin:2px 0 8px}
-.cv-summary{font-size:11px;line-height:1.6;margin-bottom:12px}
-.cv-metrics{gap:8px;margin:10px 0 14px}
-.cv-metric{padding:6px 4px}
-.cv-metric-val{font-size:18px}
-.cv-metric-lbl{font-size:8px}
-.cv-section{margin:12px 0;break-inside:avoid}
-.cv-section-title{font-size:11px;border-left-color:#4f6ef7!important;margin-bottom:8px;padding-left:8px}
-.cv-why{gap:6px;margin-bottom:6px}
-.cv-why-item{padding:8px 6px;break-inside:avoid}
-.cv-why-icon{font-size:18px}
-.cv-why-title{font-size:10px}
-.cv-why-desc{font-size:9px}
-.cv-exp{margin:8px 0;padding-left:12px;break-inside:avoid}
-.cv-exp::before{left:-4px;top:5px;width:6px;height:6px}
-.cv-exp-role{font-size:12px}
-.cv-exp-date{font-size:10px}
-.cv-exp-company{font-size:11px;margin:1px 0 4px}
-.cv-exp-list{font-size:11px;padding-left:14px}
-.cv-exp-list li{margin:2px 0;line-height:1.45}
-.cv-project{margin:6px 0;padding:8px 10px;break-inside:avoid}
-.cv-proj-name{font-size:12px}
-.cv-proj-tech{font-size:10px}
-.cv-proj-desc{font-size:10px;line-height:1.5}
-.cv-method-step{font-size:11px;padding:4px 8px;break-inside:avoid}
-.cv-pub-item{margin:4px 0}
-.cv-pub-title{font-size:11px}
-.cv-pub-venue{font-size:10px}
-.cv-platform-tag{font-size:10px;padding:3px 10px}
-.cv-edu{margin:6px 0}
-.cv-edu-deg{font-size:12px}
-.cv-edu-school{font-size:11px}
-.cv-edu-detail{font-size:10px}
-.cv-edu-year{font-size:10px}
-.cv-award{padding:6px 8px;break-inside:avoid}
-.cv-award strong{font-size:11px}
-.cv-award span{font-size:9px}
-.cv-testimonial{padding:8px 10px;break-inside:avoid}
-.cv-testimonial-text{font-size:11px;line-height:1.5}
-.cv-testimonial-author{font-size:10px}
-.cv-ai-watermark{font-size:8px;padding:4px}
+/* ── Sidebar (ultra-compact) ── */
+.cv-sidebar{background:linear-gradient(180deg,#0f1629 0%,#162040 100%)!important;padding:10px 10px 8px;font-size:9px;line-height:1.35}
+.cv-sidebar h2{margin:8px 0 4px;font-size:8.5px;letter-spacing:1.5px;padding-bottom:3px}
+.cv-sidebar h2:first-of-type{margin-top:8px}
+.cv-avatar{width:52px;height:52px;font-size:20px;margin-bottom:8px}
+.cv-sidebar img{width:52px!important;height:52px!important;margin-bottom:8px!important}
+.cv-contact li{font-size:8px;margin:2px 0;gap:4px}
+.cv-contact svg{width:10px;height:10px}
+.cv-sb-item{margin:2px 0}
+.cv-sb-lbl{font-size:8px;margin-bottom:1px}
+.cv-sb-lbl span{font-size:8px}
+.cv-sb-track{height:3px}
+.cv-tag{font-size:7px;padding:0px 4px;border-radius:2px}
+.cv-tag-group{margin:3px 0}
+.cv-tag-group h3{font-size:7px;margin-bottom:2px;letter-spacing:1px}
+.cv-tags{gap:2px}
+.cv-lang-item{font-size:8px;margin:1px 0}
+.cv-cert{font-size:8px;margin:2px 0;line-height:1.3}
+.cv-cert-year{font-size:7px}
+.cv-gallery{grid-template-columns:repeat(3,1fr);gap:2px;margin-top:3px}
+.cv-gallery-item{padding:3px 2px;border-radius:3px}
+.cv-gallery-item span{font-size:13px!important}
+.cv-gallery-label{font-size:6.5px}
+/* ── Main content (ultra-compact) ── */
+.cv-main{padding:10px 14px 8px}
+.cv-header h1{font-size:18px;line-height:1.1}
+.cv-title{font-size:10px;margin:1px 0 4px}
+.cv-summary{font-size:8.5px;line-height:1.4;margin-bottom:6px}
+.cv-metrics{gap:4px;margin:6px 0 8px}
+.cv-metric{padding:4px 2px;border-radius:4px}
+.cv-metric-val{font-size:14px}
+.cv-metric-lbl{font-size:6.5px;letter-spacing:1px}
+.cv-section{margin:6px 0;break-inside:avoid}
+.cv-section-title{font-size:9px;border-left-width:2px;border-left-color:#4f6ef7!important;margin-bottom:4px;padding-left:6px;letter-spacing:1.5px}
+/* Why hire */
+.cv-why{gap:4px;margin-bottom:4px}
+.cv-why-item{padding:4px 4px;break-inside:avoid;border-radius:4px}
+.cv-why-icon{font-size:13px;margin-bottom:1px}
+.cv-why-title{font-size:8px}
+.cv-why-desc{font-size:7px;line-height:1.3}
+/* Experience */
+.cv-exp{margin:4px 0;padding-left:8px;break-inside:avoid;border-left-width:1px}
+.cv-exp::before{left:-3px;top:4px;width:5px;height:5px}
+.cv-exp-role{font-size:9.5px}
+.cv-exp-date{font-size:8px}
+.cv-exp-company{font-size:8.5px;margin:0 0 2px}
+.cv-exp-list{font-size:8px;padding-left:12px;margin:0}
+.cv-exp-list li{margin:1px 0;line-height:1.3}
+/* Projects */
+.cv-project{margin:3px 0;padding:5px 7px;break-inside:avoid;border-radius:4px}
+.cv-proj-name{font-size:9px}
+.cv-proj-tech{font-size:7.5px;margin:1px 0 2px}
+.cv-proj-desc{font-size:7.5px;line-height:1.35}
+.cv-project div[style]{font-size:7.5px!important;margin-bottom:1px!important}
+/* Methodology */
+.cv-method-step{font-size:8px;padding:2px 6px;break-inside:avoid;border-left-width:2px}
+.cv-methodology{gap:2px}
+/* Publications */
+.cv-pub-item{margin:2px 0}
+.cv-pub-title{font-size:8.5px}
+.cv-pub-venue{font-size:7.5px}
+/* Platforms */
+.cv-platform-tag{font-size:7.5px;padding:1px 6px}
+.cv-platforms{gap:4px;margin:2px 0}
+/* Education */
+.cv-edu{margin:3px 0;gap:6px}
+.cv-edu-deg{font-size:9px}
+.cv-edu-school{font-size:8px}
+.cv-edu-detail{font-size:7.5px}
+.cv-edu-year{font-size:7.5px;padding:1px 5px}
+/* Awards */
+.cv-awards-grid{gap:4px}
+.cv-award{padding:3px 5px;break-inside:avoid;border-radius:4px}
+.cv-award strong{font-size:8px;margin-bottom:0}
+.cv-award span{font-size:7px;line-height:1.3}
+/* Testimonials — show only 2 in print */
+.cv-testimonials{gap:4px}
+.cv-testimonial{padding:4px 6px;break-inside:avoid;border-left-width:2px;border-radius:0 4px 4px 0}
+.cv-testimonial:nth-child(n+3){display:none}
+.cv-testimonial-text{font-size:8px;line-height:1.35}
+.cv-testimonial-author{font-size:7px;margin-top:2px}
 }
 @media(max-width:768px){.cv-page{grid-template-columns:1fr;max-width:100%;margin:0;border-radius:0}}
 
@@ -193,8 +213,6 @@ body{background:#fff;margin:0;padding:0}
 .btn-print{background:#4f6ef7;color:#fff}
 .btn-print:hover{background:#3d5ce5}
 
-/* Watermark */
-.cv-ai-watermark{display:block;text-align:center;font-size:9px;color:#c0c4d0;padding:8px;letter-spacing:1px}
 </style>
 </head>
 <body>
@@ -429,8 +447,6 @@ body{background:#fff;margin:0;padding:0}
         </div>
       </div>
     </section>
-
-    <span class="cv-ai-watermark">Generated with AI</span>
   </main>
 </div>
 
