@@ -11,6 +11,25 @@ const projectImages: Record<string, string> = {
   DabbaRun: '/projects/dabbarun.jpg',
 };
 
+const playStoreLinks: Record<string, string> = {
+  NidhiPay: 'https://play.google.com/store/search?q=NidhiPay+UPI&c=apps',
+  VitalSync: 'https://play.google.com/store/search?q=VitalSync+health+fitness&c=apps',
+  LiveKart: 'https://play.google.com/store/search?q=LiveKart+live+commerce&c=apps',
+  StyleBazaar: 'https://play.google.com/store/search?q=StyleBazaar+fashion&c=apps',
+  DabbaRun: 'https://play.google.com/store/search?q=DabbaRun+food+delivery&c=apps',
+};
+
+function PlayStoreIcon({ size = 16 }: { size?: number }) {
+  return (
+    <svg width={size} height={size * 1.1} viewBox="0 0 20 22" fill="none">
+      <path d="M1.57 0.34C1.22 0.7 1 1.27 1 2v18c0 .73.22 1.3.57 1.66l.09.08L11.3 12.1v-.2L1.66.26l-.09.08z" fill="#4285F4"/>
+      <path d="M14.56 15.36L11.3 12.1v-.2l3.26-3.26.07.04 3.86 2.2c1.1.62 1.1 1.64 0 2.27l-3.86 2.2-.07.01z" fill="#FBBC04"/>
+      <path d="M14.63 15.32L11.3 12 1.57 21.66c.37.39.97.41 1.67.02l11.39-6.36z" fill="#EA4335"/>
+      <path d="M14.63 8.68L3.24.32C2.54-.07 1.94-.05 1.57.34L11.3 12l3.33-3.32z" fill="#34A853"/>
+    </svg>
+  );
+}
+
 /* ── Corner squares — 21st.dev Dark Grid ── */
 function CornerSquares() {
   return (
@@ -382,17 +401,45 @@ function FeaturedProjectCard({
           </div>
 
           {/* Action row — role & client attribution */}
-          <div className="flex items-center gap-3 mt-auto pt-4 border-t border-white/[0.04]">
-            <div
-              className="w-7 h-7 rounded-full flex items-center justify-center text-[10px] font-bold text-white flex-shrink-0"
-              style={{ background: `linear-gradient(135deg, ${project.color}, ${project.color}90)` }}
-            >
-              SS
+          <div className="flex items-center justify-between gap-3 mt-auto pt-4 border-t border-white/[0.04]">
+            <div className="flex items-center gap-3">
+              <div
+                className="w-7 h-7 rounded-full flex items-center justify-center text-[10px] font-bold text-white flex-shrink-0"
+                style={{ background: `linear-gradient(135deg, ${project.color}, ${project.color}90)` }}
+              >
+                SS
+              </div>
+              <div className="min-w-0">
+                <span className="text-xs sm:text-[11px] text-zinc-400 font-medium block leading-tight">{project.role}</span>
+                <span className="text-[10px] text-zinc-600 font-mono">Client: {project.client}</span>
+              </div>
             </div>
-            <div className="min-w-0">
-              <span className="text-xs sm:text-[11px] text-zinc-400 font-medium block leading-tight">{project.role}</span>
-              <span className="text-[10px] text-zinc-600 font-mono">Client: {project.client}</span>
-            </div>
+            {playStoreLinks[project.title] && (
+              <a
+                href={playStoreLinks[project.title]}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-3.5 py-2 rounded-lg border transition-all duration-300 hover:-translate-y-0.5 flex-shrink-0"
+                style={{
+                  background: 'rgba(255,255,255,0.03)',
+                  borderColor: 'rgba(255,255,255,0.06)',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = `${project.color}40`;
+                  e.currentTarget.style.background = `${project.color}08`;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.06)';
+                  e.currentTarget.style.background = 'rgba(255,255,255,0.03)';
+                }}
+              >
+                <PlayStoreIcon size={14} />
+                <div className="leading-none">
+                  <div className="text-[8px] text-zinc-500 uppercase tracking-wider">GET IT ON</div>
+                  <div className="text-[11px] font-semibold text-zinc-300">Google Play</div>
+                </div>
+              </a>
+            )}
           </div>
         </div>
       </div>
@@ -595,17 +642,45 @@ function ProjectCard({
         </div>
 
         {/* Action row — role & client attribution */}
-        <div className="flex items-center gap-2">
-          <div
-            className="w-6 h-6 rounded-full flex items-center justify-center text-[9px] font-bold text-white flex-shrink-0"
-            style={{ background: `linear-gradient(135deg, ${project.color}, ${project.color}90)` }}
-          >
-            SS
+        <div className="flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2">
+            <div
+              className="w-6 h-6 rounded-full flex items-center justify-center text-[9px] font-bold text-white flex-shrink-0"
+              style={{ background: `linear-gradient(135deg, ${project.color}, ${project.color}90)` }}
+            >
+              SS
+            </div>
+            <div className="min-w-0">
+              <span className="text-[11px] sm:text-[10px] text-zinc-400 font-medium block leading-tight">{project.role}</span>
+              <span className="text-[9px] text-zinc-600 font-mono">Client: {project.client}</span>
+            </div>
           </div>
-          <div className="min-w-0">
-            <span className="text-[11px] sm:text-[10px] text-zinc-400 font-medium block leading-tight">{project.role}</span>
-            <span className="text-[9px] text-zinc-600 font-mono">Client: {project.client}</span>
-          </div>
+          {playStoreLinks[project.title] && (
+            <a
+              href={playStoreLinks[project.title]}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border transition-all duration-300 hover:-translate-y-0.5 flex-shrink-0"
+              style={{
+                background: 'rgba(255,255,255,0.03)',
+                borderColor: 'rgba(255,255,255,0.06)',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = `${project.color}40`;
+                e.currentTarget.style.background = `${project.color}08`;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.06)';
+                e.currentTarget.style.background = 'rgba(255,255,255,0.03)';
+              }}
+            >
+              <PlayStoreIcon size={12} />
+              <div className="leading-none">
+                <div className="text-[7px] text-zinc-500 uppercase tracking-wider">GET IT ON</div>
+                <div className="text-[10px] font-semibold text-zinc-300">Google Play</div>
+              </div>
+            </a>
+          )}
         </div>
       </div>
     </motion.div>
