@@ -12,11 +12,11 @@ const projectImages: Record<string, string> = {
 };
 
 const playStoreLinks: Record<string, string> = {
-  NidhiPay: 'https://play.google.com/store/search?q=NidhiPay+UPI&c=apps',
-  VitalSync: 'https://play.google.com/store/search?q=VitalSync+health+fitness&c=apps',
-  LiveKart: 'https://play.google.com/store/search?q=LiveKart+live+commerce&c=apps',
-  StyleBazaar: 'https://play.google.com/store/search?q=StyleBazaar+fashion&c=apps',
-  DabbaRun: 'https://play.google.com/store/search?q=DabbaRun+food+delivery&c=apps',
+  NidhiPay: 'https://play.google.com/store/search?q=NidhiPay&c=apps',
+  VitalSync: 'https://play.google.com/store/search?q=VitalSync&c=apps',
+  LiveKart: 'https://play.google.com/store/search?q=LiveKart&c=apps',
+  StyleBazaar: 'https://play.google.com/store/search?q=StyleBazaar&c=apps',
+  DabbaRun: 'https://play.google.com/store/search?q=DabbaRun&c=apps',
 };
 
 function PlayStoreIcon({ size = 16 }: { size?: number }) {
